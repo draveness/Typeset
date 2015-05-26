@@ -11,9 +11,11 @@
 @interface TypesetKit : NSObject
 
 typedef TypesetKit *(^TypesettingIntegerBlock)(NSUInteger);
+typedef TypesetKit *(^TypesettingCGFloatBlock)(CGFloat);
 typedef TypesetKit *(^TypesettingRangeBlock)(NSRange);
 typedef TypesetKit *(^TypesettingStringBlock)(NSString *);
 typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
+typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 
 @property (nonatomic, strong) NSMutableAttributedString *string;
 
@@ -28,8 +30,9 @@ typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
 - (TypesettingColorBlock)color;
 - (TypesettingIntegerBlock)hexColor;
 
-- (TypesettingStringBlock)font;
-- (TypesettingIntegerBlock)size;
+- (TypesettingStringBlock)fontName;
+- (TypesettingCGFloatBlock)fontSize;
+- (TypesettingFontBlock)font;
 
 - (TypesettingIntegerBlock)underline;
 

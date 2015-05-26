@@ -12,5 +12,6 @@
 #import "TypesetKit.h"
 #import "TypesetKit+Color.h"
 #import "NSString+Typeset.h"
+#import "NSAttributedString+Typeset.h"
 
 #endif

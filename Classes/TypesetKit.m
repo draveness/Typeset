@@ -104,19 +104,25 @@
     };
 }
 
-- (TypesettingStringBlock)font {
+- (TypesettingFontBlock)font {
+    return ^(NSString *fontName, CGFloat fontSize) {
+        self.fontName(fontName).fontSize(fontSize);
+        return self;
+    };
+}
+
+- (TypesettingStringBlock)fontName {
     return ^(NSString *fontName) {
         NSRange range = self.attributeRange;
         UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
-        NSLog(@"%f",font.pointSize);
         CGFloat size = font.pointSize;
         [self.string addAttribute:NSFontAttributeName value:[UIFont fontWithName:fontName size:size] range:self.attributeRange];
         return self;
     };
 }
 
-- (TypesettingIntegerBlock)size {
-    return ^(NSUInteger fontSize) {
+- (TypesettingCGFloatBlock)fontSize {
+    return ^(CGFloat fontSize) {
         NSRange range = self.attributeRange;
         UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
         font = [font fontWithSize:fontSize];
