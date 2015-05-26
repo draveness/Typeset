@@ -14,6 +14,9 @@
 		183D50821B13F8110041B180 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183D50811B13F8110041B180 /* Images.xcassets */; };
 		183D50851B13F8110041B180 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183D50831B13F8110041B180 /* LaunchScreen.xib */; };
 		183D50911B13F8110041B180 /* TypesetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50901B13F8110041B180 /* TypesetTests.m */; };
+		183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D509C1B13F8200041B180 /* NSString+Typeset.m */; };
+		183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D509F1B13F8200041B180 /* TypesetKit+Color.m */; };
+		183D50A41B13F8200041B180 /* TypesetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50A11B13F8200041B180 /* TypesetKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,13 @@
 		183D508A1B13F8110041B180 /* TypesetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypesetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		183D508F1B13F8110041B180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183D50901B13F8110041B180 /* TypesetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypesetTests.m; sourceTree = "<group>"; };
+		183D509B1B13F8200041B180 /* NSString+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Typeset.h"; sourceTree = "<group>"; };
+		183D509C1B13F8200041B180 /* NSString+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Typeset.m"; sourceTree = "<group>"; };
+		183D509D1B13F8200041B180 /* Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Typeset.h; sourceTree = "<group>"; };
+		183D509E1B13F8200041B180 /* TypesetKit+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TypesetKit+Color.h"; sourceTree = "<group>"; };
+		183D509F1B13F8200041B180 /* TypesetKit+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TypesetKit+Color.m"; sourceTree = "<group>"; };
+		183D50A01B13F8200041B180 /* TypesetKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypesetKit.h; sourceTree = "<group>"; };
+		183D50A11B13F8200041B180 /* TypesetKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesetKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 		183D50731B13F8110041B180 /* Typeset */ = {
 			isa = PBXGroup;
 			children = (
+				183D509A1B13F8200041B180 /* Classes */,
 				183D50781B13F8110041B180 /* AppDelegate.h */,
 				183D50791B13F8110041B180 /* AppDelegate.m */,
 				183D507B1B13F8110041B180 /* ViewController.h */,
@@ -118,6 +129,20 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		183D509A1B13F8200041B180 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				183D509B1B13F8200041B180 /* NSString+Typeset.h */,
+				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
+				183D509D1B13F8200041B180 /* Typeset.h */,
+				183D509E1B13F8200041B180 /* TypesetKit+Color.h */,
+				183D509F1B13F8200041B180 /* TypesetKit+Color.m */,
+				183D50A01B13F8200041B180 /* TypesetKit.h */,
+				183D50A11B13F8200041B180 /* TypesetKit.m */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -220,7 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				183D507D1B13F8110041B180 /* ViewController.m in Sources */,
+				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
+				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
+				183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */,
 				183D50771B13F8110041B180 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

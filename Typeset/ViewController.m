@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Typeset.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:label];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.attributedText = @"Hello typeset".typeset.substring(@"Hello").size(40)
+    .substring(@"type").red
+    .substring(@"set").green.string;
 }
 
 @end
