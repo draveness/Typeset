@@ -9,8 +9,8 @@
 #ifndef Typesetting_Typesetting_h
 #define Typesetting_Typesetting_h
 
-#import "NSString+Typeset.h"
 #import "TypesetKit.h"
 #import "TypesetKit+Color.h"
+#import "NSString+Typeset.h"
 
 #endif
