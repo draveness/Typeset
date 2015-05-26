@@ -17,6 +17,7 @@
 		183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D509C1B13F8200041B180 /* NSString+Typeset.m */; };
 		183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D509F1B13F8200041B180 /* TypesetKit+Color.m */; };
 		183D50A41B13F8200041B180 /* TypesetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50A11B13F8200041B180 /* TypesetKit.m */; };
+		188212871B13FF3700322397 /* NSAttributedString+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 188212861B13FF3700322397 /* NSAttributedString+Typeset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		183D509F1B13F8200041B180 /* TypesetKit+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TypesetKit+Color.m"; sourceTree = "<group>"; };
 		183D50A01B13F8200041B180 /* TypesetKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypesetKit.h; sourceTree = "<group>"; };
 		183D50A11B13F8200041B180 /* TypesetKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesetKit.m; sourceTree = "<group>"; };
+		188212851B13FF3700322397 /* NSAttributedString+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Typeset.h"; sourceTree = "<group>"; };
+		188212861B13FF3700322397 /* NSAttributedString+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Typeset.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				183D509F1B13F8200041B180 /* TypesetKit+Color.m */,
 				183D509B1B13F8200041B180 /* NSString+Typeset.h */,
 				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
+				188212851B13FF3700322397 /* NSAttributedString+Typeset.h */,
+				188212861B13FF3700322397 /* NSAttributedString+Typeset.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -248,6 +253,7 @@
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
 				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
+				188212871B13FF3700322397 /* NSAttributedString+Typeset.m in Sources */,
 				183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */,
 				183D50771B13F8110041B180 /* main.m in Sources */,
 			);
