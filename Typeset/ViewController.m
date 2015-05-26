@@ -23,7 +23,7 @@
     NSMutableAttributedString *mas = @"Hello typeset".typeset.substring(@"Hello").fontSize(40)
         .substring(@"type").red
         .substring(@"set").green.underline(NSUnderlineStyleSingle).append(@"He").blue.string;
-    mas.append(mas);
+    mas.append(mas).append(mas);
     label.attributedText = mas;
 }
 
