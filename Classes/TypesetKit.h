@@ -38,4 +38,6 @@ typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 
 - (TypesettingStringBlock)link;
 
+- (TypesettingStringBlock)append;
+
 @end

@@ -146,4 +146,11 @@
     };
 }
 
+- (TypesettingStringBlock)append {
+    return ^(NSString *string) {
+        [self.string appendAttributedString:[[NSAttributedString alloc] initWithString:string]];
+        return self;
+    };
+}
+
 @end

@@ -1,5 +1,5 @@
 //
-//  NSAttributedString+Typeset.h
+//  NSMutableAttributedString+Typeset.h
 //  Typeset
 //
 //  Created by apple on 15/5/26.
@@ -10,8 +10,10 @@
 
 @class TypesetKit;
 
-@interface NSAttributedString (Typeset)
+@interface NSMutableAttributedString (Typeset)
 
 - (TypesetKit *)typeset;
+
+- (NSMutableAttributedString *(^)(id))append;
 
 @end
