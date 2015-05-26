@@ -133,13 +133,13 @@
 		183D509A1B13F8200041B180 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				183D509B1B13F8200041B180 /* NSString+Typeset.h */,
-				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
 				183D509D1B13F8200041B180 /* Typeset.h */,
-				183D509E1B13F8200041B180 /* TypesetKit+Color.h */,
-				183D509F1B13F8200041B180 /* TypesetKit+Color.m */,
 				183D50A01B13F8200041B180 /* TypesetKit.h */,
 				183D50A11B13F8200041B180 /* TypesetKit.m */,
+				183D509E1B13F8200041B180 /* TypesetKit+Color.h */,
+				183D509F1B13F8200041B180 /* TypesetKit+Color.m */,
+				183D509B1B13F8200041B180 /* NSString+Typeset.h */,
+				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -444,6 +444,7 @@
 				183D50961B13F8110041B180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		183D50971B13F8110041B180 /* Build configuration list for PBXNativeTarget "TypesetTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +453,7 @@
 				183D50991B13F8110041B180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

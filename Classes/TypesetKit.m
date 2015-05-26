@@ -126,4 +126,18 @@
     };
 }
 
+- (TypesettingIntegerBlock)underline {
+    return ^(NSUInteger underline) {
+        [self.string addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:underline] range:self.attributeRange];
+        return self;
+    };
+}
+
+- (TypesettingStringBlock)link {
+    return ^(NSString *url) {
+        [self.string addAttribute:NSLinkAttributeName value:url range:self.attributeRange];
+        return self;
+    };
+}
+
 @end

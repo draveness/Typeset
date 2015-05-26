@@ -31,4 +31,8 @@ typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
 - (TypesettingStringBlock)font;
 - (TypesettingIntegerBlock)size;
 
+- (TypesettingIntegerBlock)underline;
+
+- (TypesettingStringBlock)link;
+
 @end
