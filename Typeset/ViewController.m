@@ -22,8 +22,8 @@
     label.textAlignment = NSTextAlignmentCenter;
     NSMutableAttributedString *mas = @"Hello typeset".typeset.substring(@"Hello").fontSize(40)
         .substring(@"type").red
-        .substring(@"set").green.underline(NSUnderlineStyleSingle).append(@"He").blue.string;
-    mas.append(mas).append(mas);
+        .substring(@"set").green
+        .underline(NSUnderlineStyleSingle).append(@"He").string;
     label.attributedText = mas;
 }
 

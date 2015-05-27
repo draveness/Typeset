@@ -15,11 +15,11 @@
 
 @property (nonatomic, assign) NSRange attributeRange;
 
-@property (nonatomic, assign) NSUInteger attributeFrom;
-@property (nonatomic, assign) NSUInteger attributeTo;
+@property (nonatomic, assign) NSInteger attributeFrom;
+@property (nonatomic, assign) NSInteger attributeTo;
 
-@property (nonatomic, assign) NSUInteger attributeLocation;
-@property (nonatomic, assign) NSUInteger attributeLength;
+@property (nonatomic, assign) NSInteger attributeLocation;
+@property (nonatomic, assign) NSInteger attributeLength;
 
 @end
 
@@ -28,11 +28,16 @@
 - (void)setString:(NSMutableAttributedString *)string {
     _string = string;
     self.attributeRange = NSMakeRange(0, self.string.length);
+    self.attributeFrom = -1;
+    self.attributeTo = -1;
+    self.attributeLocation = -1;
+    self.attributeLength = -1;
+
 }
 
 - (TypesettingIntegerBlock)from {
     return ^(NSUInteger from) {
-        if (self.attributeTo) {
+        if (self.attributeTo != -1) {
             self.attributeRange = NSMakeRange(from, self.attributeTo - from);
         }
         self.attributeFrom = from;
@@ -42,7 +47,7 @@
 
 - (TypesettingIntegerBlock)to {
     return ^(NSUInteger to) {
-        if (self.attributeFrom) {
+        if (self.attributeFrom != -1) {
             self.attributeRange = NSMakeRange(self.attributeFrom, to - self.attributeFrom);
         }
         self.attributeTo = to;
@@ -52,7 +57,7 @@
 
 - (TypesettingIntegerBlock)location {
     return ^(NSUInteger location) {
-        if (self.attributeLength) {
+        if (self.attributeLength != -1) {
             self.attributeRange = NSMakeRange(location, self.attributeLength);
         }
         self.attributeLocation = location;
@@ -62,7 +67,7 @@
 
 - (TypesettingIntegerBlock)length {
     return ^(NSUInteger length) {
-        if (self.attributeLength) {
+        if (self.attributeLength != -1) {
             self.attributeRange = NSMakeRange(self.attributeLocation, length);
         }
         self.attributeLength = length;
