@@ -63,7 +63,8 @@ Add one line of code to your precompiled header, or import it where you need.
 Using Typeset to deal with string is very easily. You should send `typeset` method to string first, customize it and send message `string` as last to get the final attributed string.
 
 ```
-NSMutableAttributedString *mas = @"Hello typeset".typeset.substring(@"Hello").fontSize(40)
+NSMutableAttributedString *mas = @"Hello typeset".typeset
+   .substring(@"Hello").fontSize(40)
    .substring(@"type").red
    .substring(@"set").green
    .underline(NSUnderlineStyleSingle)
