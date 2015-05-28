@@ -27,9 +27,9 @@ label.attributedText = mas;
 
 ```
 NSMutableAttributedString *mas = @"Hello typeset".typeset
-   .substring(@"Hello").fontSize(40)
-   .substring(@"type").red
-   .substring(@"set").green
+   .match(@"Hello").fontSize(40)
+   .match(@"type").red
+   .match(@"set").green
    .string;
 label.attributedText = mas;
 ```
@@ -64,9 +64,9 @@ Using Typeset to deal with string is very easily. You should send `typeset` meth
 
 ```
 NSMutableAttributedString *mas = @"Hello typeset".typeset
-   .substring(@"Hello").fontSize(40)
-   .substring(@"type").red
-   .substring(@"set").green
+   .match(@"Hello").fontSize(40)
+   .match(@"type").red
+   .match(@"set").green
    .underline(NSUnderlineStyleSingle)
    .append(@"He").string;
 ```
@@ -145,7 +145,7 @@ Typeset change total string by default. But you can use these method to change p
 * `from(i)` `to(i)` 
 * `location(i)` `length(i)` 
 * `range(range)`
-* `substring(string)` 
+* `match(string)` 
 
 If you want to change `He` of `Hello` to red.
 
@@ -153,10 +153,10 @@ If you want to change `He` of `Hello` to red.
 @"Hello".typeset.from(0).to(2).red.string;
 @"Hello".typeset.location(0).length(2).red.string;
 @"Hello".typeset.range(NSMakeRange(0,2)).red.string;
-@"Hello".typeset.substring(@"He").red.string;
+@"Hello".typeset.match(@"He").red.string;
 ```
 
-> `substring` method match the first pattern appear in the 
+> `match` method match the first pattern appear in the 
 > string, if you want to customize mutiple pattern, you should
 > not use this method.
 
