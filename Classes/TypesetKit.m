@@ -82,7 +82,7 @@
     };
 }
 
-- (TypesettingStringBlock)substring {
+- (TypesettingStringBlock)match {
     return ^(NSString *substring) {
         NSRange range = [self.string.string rangeOfString:substring];
         self.attributeRange = range;

@@ -24,7 +24,7 @@ typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 - (TypesettingIntegerBlock)location;
 - (TypesettingIntegerBlock)length;
 - (TypesettingRangeBlock)range;
-- (TypesettingStringBlock)substring;
+- (TypesettingStringBlock)match;
 - (TypesetKit *)all;
 
 - (TypesettingColorBlock)color;
