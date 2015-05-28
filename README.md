@@ -47,7 +47,7 @@ This is a very powerful and easy to read and write.
 ## Podfile
 
 ```
-pod "Typeset", "~> 1.0.0"
+pod "Typeset", "~> 1.0.1"
 ```
 
 ## Usage
