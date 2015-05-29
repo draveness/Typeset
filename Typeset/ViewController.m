@@ -21,9 +21,9 @@
     [self.view addSubview:label];
     label.textAlignment = NSTextAlignmentCenter;
     NSMutableAttributedString *mas = @"Hello typeset".typeset.match(@"Hello").fontSize(40)
-        .match(@"type").red
-        .match(@"set").green
-        .underline(NSUnderlineStyleSingle).append(@"He").string;
+        .match(@"type").purple
+        .match(@"set").blue
+        .string;
     label.attributedText = mas;
 }
 

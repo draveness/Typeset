@@ -28,13 +28,15 @@ label.attributedText = mas;
 ```
 NSMutableAttributedString *mas = @"Hello typeset".typeset
    .match(@"Hello").fontSize(40)
-   .match(@"type").red
-   .match(@"set").green
+   .match(@"type").pruple
+   .match(@"set").blue
    .string;
 label.attributedText = mas;
 ```
 
-This is a very powerful and easy to read and write.
+![Demo](./jpg/Demo.png)
+
+This is very powerful and easy to read and write.
 
 ----
 
@@ -146,6 +148,7 @@ Typeset change total string by default. But you can use these method to change p
 * `location(i)` `length(i)` 
 * `range(range)`
 * `match(string)` 
+* `matchAll(string)`
 
 If you want to change `He` of `Hello` to red.
 
