@@ -7,13 +7,14 @@
 //
 
 #import "TypesetKit.h"
+#import "NSValue+Range.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
 @interface TypesetKit ()
 
-@property (nonatomic, assign) NSRange attributeRange;
+@property (nonatomic, strong) NSMutableArray *attributeRanges;
 
 @property (nonatomic, assign) NSInteger attributeFrom;
 @property (nonatomic, assign) NSInteger attributeTo;
@@ -27,7 +28,7 @@
 
 - (void)setString:(NSMutableAttributedString *)string {
     _string = string;
-    self.attributeRange = NSMakeRange(0, self.string.length);
+    self.attributeRanges = [NSMutableArray arrayWithObject:[NSValue valueWithLocation:0 length:self.string.length]];
     self.attributeFrom = -1;
     self.attributeTo = -1;
     self.attributeLocation = -1;
@@ -38,7 +39,8 @@
 - (TypesettingIntegerBlock)from {
     return ^(NSUInteger from) {
         if (self.attributeTo != -1) {
-            self.attributeRange = NSMakeRange(from, self.attributeTo - from);
+            [self.attributeRanges removeAllObjects];
+            [self.attributeRanges addObject:[NSValue valueWithLocation:from length:self.attributeTo - from]];
         }
         self.attributeFrom = from;
         return self;
@@ -48,7 +50,8 @@
 - (TypesettingIntegerBlock)to {
     return ^(NSUInteger to) {
         if (self.attributeFrom != -1) {
-            self.attributeRange = NSMakeRange(self.attributeFrom, to - self.attributeFrom);
+            [self.attributeRanges removeAllObjects];
+            [self.attributeRanges addObject:[NSValue valueWithLocation:self.attributeFrom length:to - self.attributeFrom]];
         }
         self.attributeTo = to;
         return self;
@@ -58,7 +61,8 @@
 - (TypesettingIntegerBlock)location {
     return ^(NSUInteger location) {
         if (self.attributeLength != -1) {
-            self.attributeRange = NSMakeRange(location, self.attributeLength);
+            [self.attributeRanges removeAllObjects];
+            [self.attributeRanges addObject:[NSValue valueWithLocation:location length:self.attributeLength]];
         }
         self.attributeLocation = location;
         return self;
@@ -68,7 +72,8 @@
 - (TypesettingIntegerBlock)length {
     return ^(NSUInteger length) {
         if (self.attributeLength != -1) {
-            self.attributeRange = NSMakeRange(self.attributeLocation, length);
+            [self.attributeRanges removeAllObjects];
+            [self.attributeRanges addObject:[NSValue valueWithLocation:self.attributeLocation length:length]];
         }
         self.attributeLength = length;
         return self;
@@ -77,7 +82,23 @@
 
 - (TypesettingRangeBlock)range {
     return ^(NSRange range) {
-        self.attributeRange = range;
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        return self;
+    };
+}
+
+- (TypesettingStringBlock)matchAll {
+    return ^(NSString *substring) {
+        NSRange range = [self.string.string rangeOfString:substring];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        while (range.length != 0) {
+            NSInteger location = range.location + range.length;
+            NSInteger length = self.string.length - location;
+            range = [self.string.string rangeOfString:substring options:NSCaseInsensitiveSearch range:NSMakeRange(location, length)];
+            [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        }
         return self;
     };
 }
@@ -85,26 +106,35 @@
 - (TypesettingStringBlock)match {
     return ^(NSString *substring) {
         NSRange range = [self.string.string rangeOfString:substring];
-        self.attributeRange = range;
+        [self.string.string rangeOfString:substring];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
         return self;
     };
 }
 
 - (TypesetKit *)all {
-    self.attributeRange = NSMakeRange(0, self.string.length);
+    [self.attributeRanges removeAllObjects];
+    [self.attributeRanges addObject:[NSValue valueWithLocation:0 length:self.string.length]];
     return self;
 }
 
 - (TypesettingColorBlock)color {
     return ^(UIColor *color) {
-        [self.string addAttribute:NSForegroundColorAttributeName value:color range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSForegroundColorAttributeName value:color range:range];
+        }
         return self;
     };
 }
 
 - (TypesettingIntegerBlock)hexColor {
     return ^(NSUInteger hexColor) {
-        [self.string addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(hexColor) range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(hexColor) range:range];
+        }
         return self;
     };
 }
@@ -118,35 +148,44 @@
 
 - (TypesettingStringBlock)fontName {
     return ^(NSString *fontName) {
-        NSRange range = self.attributeRange;
-        UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
-        CGFloat size = font.pointSize;
-        [self.string addAttribute:NSFontAttributeName value:[UIFont fontWithName:fontName size:size] range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
+            CGFloat size = font.pointSize;
+            [self.string addAttribute:NSFontAttributeName value:[UIFont fontWithName:fontName size:size] range:range];
+        }
         return self;
     };
 }
 
 - (TypesettingCGFloatBlock)fontSize {
     return ^(CGFloat fontSize) {
-        NSRange range = self.attributeRange;
-        UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
-        font = [font fontWithSize:fontSize];
-        if (!font) font = [UIFont systemFontOfSize:fontSize];
-        [self.string addAttribute:NSFontAttributeName value:font range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
+            if (!font) font = [UIFont systemFontOfSize:fontSize];
+            [self.string addAttribute:NSFontAttributeName value:font range:range];
+        }
         return self;
     };
 }
 
 - (TypesettingIntegerBlock)underline {
     return ^(NSUInteger underline) {
-        [self.string addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:underline] range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:underline] range:range];
+        }
         return self;
     };
 }
 
 - (TypesettingStringBlock)link {
     return ^(NSString *url) {
-        [self.string addAttribute:NSLinkAttributeName value:url range:self.attributeRange];
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSLinkAttributeName value:url range:range];
+        }
         return self;
     };
 }

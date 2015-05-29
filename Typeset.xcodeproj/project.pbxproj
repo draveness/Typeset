@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181B1A881B18124D00E9BEA3 /* NSValue+Range.m in Sources */ = {isa = PBXBuildFile; fileRef = 181B1A871B18124D00E9BEA3 /* NSValue+Range.m */; };
 		183D50771B13F8110041B180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50761B13F8110041B180 /* main.m */; };
 		183D507A1B13F8110041B180 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50791B13F8110041B180 /* AppDelegate.m */; };
 		183D507D1B13F8110041B180 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D507C1B13F8110041B180 /* ViewController.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181B1A861B18124D00E9BEA3 /* NSValue+Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Range.h"; sourceTree = "<group>"; };
+		181B1A871B18124D00E9BEA3 /* NSValue+Range.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+Range.m"; sourceTree = "<group>"; };
 		183D50711B13F8110041B180 /* Typeset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typeset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183D50751B13F8110041B180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183D50761B13F8110041B180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
 				188212851B13FF3700322397 /* NSMutableAttributedString+Typeset.h */,
 				188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */,
+				181B1A861B18124D00E9BEA3 /* NSValue+Range.h */,
+				181B1A871B18124D00E9BEA3 /* NSValue+Range.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181B1A881B18124D00E9BEA3 /* NSValue+Range.m in Sources */,
 				183D507D1B13F8110041B180 /* ViewController.m in Sources */,
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,

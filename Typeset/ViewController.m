@@ -20,10 +20,11 @@
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
     [self.view addSubview:label];
     label.textAlignment = NSTextAlignmentCenter;
-    NSMutableAttributedString *mas = @"Hello typeset".typeset.match(@"Hello").fontSize(40)
-        .match(@"type").red
-        .match(@"set").green
-        .underline(NSUnderlineStyleSingle).append(@"He").string;
+//    NSMutableAttributedString *mas = @"Hello typeset".typeset.match(@"Hello").fontSize(40)
+//        .match(@"type").red
+//        .match(@"set").green
+//        .underline(NSUnderlineStyleSingle).append(@"He").string;
+    NSMutableAttributedString *mas = @"Hello Hello".typeset.matchAll(@"l").red.string;
     label.attributedText = mas;
 }
 
