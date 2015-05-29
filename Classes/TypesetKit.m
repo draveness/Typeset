@@ -11,7 +11,6 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-
 @interface TypesetKit ()
 
 @property (nonatomic, strong) NSMutableArray *attributeRanges;
@@ -192,7 +191,9 @@
 
 - (TypesettingStringBlock)append {
     return ^(NSString *string) {
-        [self.string appendAttributedString:[[NSAttributedString alloc] initWithString:string]];
+        NSMutableAttributedString *mas = [self.string mutableCopy];
+        [mas appendAttributedString:[[NSAttributedString alloc] initWithString:string]];
+        self.string = mas;
         return self;
     };
 }
