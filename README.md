@@ -28,7 +28,7 @@ label.attributedText = mas;
 ```
 NSMutableAttributedString *mas = @"Hello typeset".typeset
    .match(@"Hello").fontSize(40)
-   .match(@"type").pruple
+   .match(@"type").purple
    .match(@"set").blue
    .string;
 label.attributedText = mas;
