@@ -89,25 +89,7 @@
 
 - (TypesettingStringBlock)matchAll {
     return ^(NSString *substring) {
-        NSRange range = [self.string.string rangeOfString:substring];
-        [self.attributeRanges removeAllObjects];
-        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
-        while (range.length != 0) {
-            NSInteger location = range.location + range.length;
-            NSInteger length = self.string.length - location;
-            range = [self.string.string rangeOfString:substring options:0 range:NSMakeRange(location, length)];
-            [self.attributeRanges addObject:[NSValue valueWithRange:range]];
-        }
-        return self;
-    };
-}
-
-- (TypesettingStringBlock)match {
-    return ^(NSString *substring) {
-        NSRange range = [self.string.string rangeOfString:substring];
-        [self.attributeRanges removeAllObjects];
-        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
-        return self;
+        return self.matchAllWithOptions(substring,0);
     };
 }
 
@@ -123,6 +105,12 @@
             [self.attributeRanges addObject:[NSValue valueWithRange:range]];
         }
         return self;
+    };
+}
+
+- (TypesettingStringBlock)match {
+    return ^(NSString *substring) {
+        return self.matchWithOptions(substring,0);
     };
 }
 
