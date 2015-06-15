@@ -95,7 +95,7 @@
         while (range.length != 0) {
             NSInteger location = range.location + range.length;
             NSInteger length = self.string.length - location;
-            range = [self.string.string rangeOfString:substring options:NSCaseInsensitiveSearch range:NSMakeRange(location, length)];
+            range = [self.string.string rangeOfString:substring options:0 range:NSMakeRange(location, length)];
             [self.attributeRanges addObject:[NSValue valueWithRange:range]];
         }
         return self;
