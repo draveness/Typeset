@@ -89,12 +89,12 @@
 
 - (TypesettingStringBlock)matchAll {
     return ^(NSString *substring) {
-        return self.matchAllWithOptions(substring,0);
+        return self.matchAllWithOptions(substring, 0);
     };
 }
 
 - (TypesettingMatchBlock)matchAllWithOptions {
-    return ^(NSString *substring,NSStringCompareOptions options) {
+    return ^(NSString *substring, NSStringCompareOptions options) {
         NSRange range = [self.string.string rangeOfString:substring options:options];
         [self.attributeRanges removeAllObjects];
         [self.attributeRanges addObject:[NSValue valueWithRange:range]];
@@ -115,7 +115,7 @@
 }
 
 - (TypesettingMatchBlock)matchWithOptions {
-    return ^(NSString *substring,NSStringCompareOptions options) {
+    return ^(NSString *substring, NSStringCompareOptions options) {
         NSRange range = [self.string.string rangeOfString:substring options:options];
         [self.attributeRanges removeAllObjects];
         [self.attributeRanges addObject:[NSValue valueWithRange:range]];
