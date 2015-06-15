@@ -111,6 +111,30 @@
     };
 }
 
+- (TypesettingMatchBlock)matchAllWithOptions {
+    return ^(NSString *substring,NSStringCompareOptions options) {
+        NSRange range = [self.string.string rangeOfString:substring options:options];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        while (range.length != 0) {
+            NSInteger location = range.location + range.length;
+            NSInteger length = self.string.length - location;
+            range = [self.string.string rangeOfString:substring options:options range:NSMakeRange(location, length)];
+            [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        }
+        return self;
+    };
+}
+
+- (TypesettingMatchBlock)matchWithOptions {
+    return ^(NSString *substring,NSStringCompareOptions options) {
+        NSRange range = [self.string.string rangeOfString:substring options:options];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        return self;
+    };
+}
+
 - (TypesetKit *)all {
     [self.attributeRanges removeAllObjects];
     [self.attributeRanges addObject:[NSValue valueWithLocation:0 length:self.string.length]];

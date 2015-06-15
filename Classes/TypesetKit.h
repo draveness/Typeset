@@ -16,6 +16,7 @@ typedef TypesetKit *(^TypesettingRangeBlock)(NSRange);
 typedef TypesetKit *(^TypesettingStringBlock)(NSString *);
 typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
 typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
+typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 @property (nonatomic, strong) NSMutableAttributedString *string;
 
@@ -25,7 +26,9 @@ typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 - (TypesettingIntegerBlock)length;
 - (TypesettingRangeBlock)range;
 - (TypesettingStringBlock)match;
+- (TypesettingMatchBlock)matchWithOptions;
 - (TypesettingStringBlock)matchAll;
+- (TypesettingMatchBlock)matchAllWithOptions;
 - (TypesetKit *)all;
 
 - (TypesettingColorBlock)color;
