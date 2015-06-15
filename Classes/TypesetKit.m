@@ -95,7 +95,7 @@
         while (range.length != 0) {
             NSInteger location = range.location + range.length;
             NSInteger length = self.string.length - location;
-            range = [self.string.string rangeOfString:substring options:NSCaseInsensitiveSearch range:NSMakeRange(location, length)];
+            range = [self.string.string rangeOfString:substring options:0 range:NSMakeRange(location, length)];
             [self.attributeRanges addObject:[NSValue valueWithRange:range]];
         }
         return self;
@@ -105,6 +105,30 @@
 - (TypesettingStringBlock)match {
     return ^(NSString *substring) {
         NSRange range = [self.string.string rangeOfString:substring];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        return self;
+    };
+}
+
+- (TypesettingMatchBlock)matchAllWithOptions {
+    return ^(NSString *substring,NSStringCompareOptions options) {
+        NSRange range = [self.string.string rangeOfString:substring options:options];
+        [self.attributeRanges removeAllObjects];
+        [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        while (range.length != 0) {
+            NSInteger location = range.location + range.length;
+            NSInteger length = self.string.length - location;
+            range = [self.string.string rangeOfString:substring options:options range:NSMakeRange(location, length)];
+            [self.attributeRanges addObject:[NSValue valueWithRange:range]];
+        }
+        return self;
+    };
+}
+
+- (TypesettingMatchBlock)matchWithOptions {
+    return ^(NSString *substring,NSStringCompareOptions options) {
+        NSRange range = [self.string.string rangeOfString:substring options:options];
         [self.attributeRanges removeAllObjects];
         [self.attributeRanges addObject:[NSValue valueWithRange:range]];
         return self;

@@ -20,7 +20,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
     [self.view addSubview:label];
     label.textAlignment = NSTextAlignmentCenter;
-    NSMutableAttributedString *mas = @"Hello typeset".typeset.match(@"Hello").fontSize(40)
+    NSMutableAttributedString *mas = @"Hello typeset, hello".typeset.matchAll(@"Hello").fontSize(40)
         .match(@"type").purple
         .match(@"set").blue
         .string;
