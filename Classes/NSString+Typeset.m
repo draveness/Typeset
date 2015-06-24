@@ -17,9 +17,9 @@
     TypesetKit *typeset = objc_getAssociatedObject(self, @selector(typeset));
     if (!typeset) {
         typeset = [[TypesetKit alloc] init];
-        typeset.string = [[NSMutableAttributedString alloc] initWithString:self];
         objc_setAssociatedObject(self, @selector(typeset), typeset, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
+    typeset.string = [[NSMutableAttributedString alloc] initWithString:self];
     return typeset;
 }
 
