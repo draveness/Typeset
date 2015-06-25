@@ -44,4 +44,6 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingStringBlock)append;
 
+- (TypesettingIntegerBlock)ligature;
+
 @end

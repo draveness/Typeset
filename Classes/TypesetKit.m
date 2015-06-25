@@ -211,4 +211,14 @@
     };
 }
 
+- (TypesettingIntegerBlock)ligature {
+    return ^(NSUInteger ligature) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSLigatureAttributeName value:@(ligature) range:range];
+        }
+        return self;
+    };
+}
+
 @end
