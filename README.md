@@ -38,8 +38,6 @@ label.attributedText = mas;
 
 This is very powerful and easy to read and write.
 
-**If you would like to use chainable syntax to create attributed string, use [Crotalus](https://github.com/Draveness/Crotalus) instread**
-
 ----
 
 # How To Get Started
@@ -76,6 +74,10 @@ NSMutableAttributedString *mas = @"Hello typeset".typeset
 ```
 
 ![](./jpg/1.png)
+
+## Swift 
+
+**If you would like to use chainable syntax to create attributed string with swift, use [Crotalus](https://github.com/Draveness/Crotalus) instread**
 
 
 ## Colorize
