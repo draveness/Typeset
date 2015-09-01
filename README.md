@@ -38,6 +38,8 @@ label.attributedText = mas;
 
 This is very powerful and easy to read and write.
 
+**If you would like to use chainable syntax to create attributed string, use [Crotalus](https://github.com/Draveness/Crotalus) instread**
+
 ----
 
 # How To Get Started
