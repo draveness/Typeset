@@ -221,4 +221,42 @@
     };
 }
 
+- (TypesettingIntegerBlock) lineBreakMode {
+    return ^(NSUInteger lineBreakMode) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            
+            NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
+            style.lineBreakMode = lineBreakMode;
+            [self.string addAttribute:NSParagraphStyleAttributeName value:style range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingIntegerBlock)textAlignment {
+    return ^(NSUInteger textAlignment) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            
+            NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
+            style.alignment = textAlignment;
+            [self.string addAttribute:NSParagraphStyleAttributeName value:style range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingCGFloatBlock)lineSpacing {
+    return ^(CGFloat lineSpacing) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            
+            NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
+            style.lineSpacing = lineSpacing;
+            [self.string addAttribute:NSParagraphStyleAttributeName value:style range:range];
+        }
+        return self;
+    };
+}
 @end
