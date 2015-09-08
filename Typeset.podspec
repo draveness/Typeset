@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Draveness/Typeset.git", :tag => s.version }
 
   s.source_files  = "Classes/*.{h,m}"
-  s.public_header_files = "Classes/Typeset.h"
+#  s.public_header_files = "Classes/Typeset.h"
 end
