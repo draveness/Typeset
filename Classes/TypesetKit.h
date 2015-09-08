@@ -46,9 +46,4 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingIntegerBlock)ligature;
 
-- (TypesettingIntegerBlock)lineBreakMode;
-
-- (TypesettingIntegerBlock)textAlignment;
-
-- (TypesettingCGFloatBlock)lineSpacing;
 @end
