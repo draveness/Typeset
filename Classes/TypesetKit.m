@@ -151,7 +151,12 @@
 
 - (TypesettingFontBlock)font {
     return ^(NSString *fontName, CGFloat fontSize) {
-        self.fontName(fontName).fontSize(fontSize);
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            UIFont* font = [UIFont fontWithName:fontName
+                                           size:fontSize];
+            [self.string addAttribute:NSFontAttributeName value:font range:range];
+        }
         return self;
     };
 }
