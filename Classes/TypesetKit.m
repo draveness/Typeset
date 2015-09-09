@@ -21,6 +21,8 @@
 @property (nonatomic, assign) NSInteger attributeLocation;
 @property (nonatomic, assign) NSInteger attributeLength;
 
+@property (nonatomic, strong) NSMutableParagraphStyle *paragraphStyle;
+
 @end
 
 @implementation TypesetKit
@@ -231,9 +233,8 @@
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             
-            NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
-            style.lineBreakMode = lineBreakMode;
-            [self.string addAttribute:NSParagraphStyleAttributeName value:style range:range];
+            self.paragraphStyle.lineBreakMode = lineBreakMode;
+            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range];
         }
         return self;
     };
@@ -244,9 +245,8 @@
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             
-            NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
-            style.alignment = textAlignment;
-            [self.string addAttribute:NSParagraphStyleAttributeName value:style range:range];
+            self.paragraphStyle.alignment = textAlignment;
+            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range];
         }
         return self;
     };
@@ -264,4 +264,12 @@
         return self;
     };
 }
+
+- (NSMutableParagraphStyle *)paragraphStyle {
+    if (!_paragraphStyle) {
+        _paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    }
+    return _paragraphStyle;
+}
+
 @end
