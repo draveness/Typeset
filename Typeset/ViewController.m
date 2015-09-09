@@ -24,6 +24,7 @@
         .match(@"type").purple
         .match(@"set").blue
         .string;
+
     label.attributedText = mas;
 }
 
