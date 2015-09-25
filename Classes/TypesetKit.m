@@ -171,26 +171,34 @@
 
 - (TypesettingStringBlock)fontName {
     return ^(NSString *fontName) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-            UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
-            range = [value rangeValue];
-            CGFloat size = font.pointSize;
-            [self.string addAttribute:NSFontAttributeName value:[UIFont fontWithName:fontName size:size] range:range];
+        if (self.string.length)
+        {
+            for (NSValue *value in self.attributeRanges) {
+                NSRange range = [value rangeValue];
+                UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
+                range = [value rangeValue];
+                CGFloat size = font.pointSize;
+                [self.string addAttribute:NSFontAttributeName value:[UIFont fontWithName:fontName size:size] range:range];
+            }
         }
+        
         return self;
     };
 }
 
 - (TypesettingCGFloatBlock)fontSize {
     return ^(CGFloat fontSize) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-            UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
-            range = [value rangeValue];
-            if (!font) font = [UIFont systemFontOfSize:fontSize];
-            [self.string addAttribute:NSFontAttributeName value:font range:range];
+        if (self.string.length)
+        {
+            for (NSValue *value in self.attributeRanges) {
+                NSRange range = [value rangeValue];
+                UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
+                range = [value rangeValue];
+                if (!font) font = [UIFont systemFontOfSize:fontSize];
+                [self.string addAttribute:NSFontAttributeName value:font range:range];
+            }
         }
+        
         return self;
     };
 }

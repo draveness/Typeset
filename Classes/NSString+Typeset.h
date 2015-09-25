@@ -10,6 +10,8 @@
 
 @class TypesetKit;
 
+#define Typeset(__X__) (__X__?__X__.typeset:@"".typeset)
+
 @interface NSString (Typeset)
 
 - (TypesetKit *)typeset;
