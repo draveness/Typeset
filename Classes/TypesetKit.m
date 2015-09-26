@@ -27,8 +27,7 @@
 
 @implementation TypesetKit
 
-- (void) removeAllAttributeRanges
-{
+- (void)removeAllAttributeRanges {
     [self.attributeRanges removeAllObjects];
     self.paragraphStyle = nil;
 }
@@ -171,8 +170,7 @@
 
 - (TypesettingStringBlock)fontName {
     return ^(NSString *fontName) {
-        if (self.string.length)
-        {
+        if (self.string.length) {
             for (NSValue *value in self.attributeRanges) {
                 NSRange range = [value rangeValue];
                 UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
@@ -188,8 +186,7 @@
 
 - (TypesettingCGFloatBlock)fontSize {
     return ^(CGFloat fontSize) {
-        if (self.string.length)
-        {
+        if (self.string.length) {
             for (NSValue *value in self.attributeRanges) {
                 NSRange range = [value rangeValue];
                 UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
