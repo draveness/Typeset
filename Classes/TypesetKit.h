@@ -15,6 +15,8 @@ typedef TypesetKit *(^TypesettingCGFloatBlock)(CGFloat);
 typedef TypesetKit *(^TypesettingRangeBlock)(NSRange);
 typedef TypesetKit *(^TypesettingStringBlock)(NSString *);
 typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
+typedef TypesetKit *(^TypesettingBaselineBlock)(int);
+typedef TypesetKit *(^TypesettingStrikeThroughBlock)(int);
 typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
@@ -36,7 +38,11 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingStringBlock)fontName;
 - (TypesettingCGFloatBlock)fontSize;
+
+- (TypesettingStrikeThroughBlock)strikeThrough;
+
 - (TypesettingFontBlock)font;
+- (TypesettingBaselineBlock)baseline;
 
 - (TypesettingIntegerBlock)underline;
 
