@@ -157,7 +157,7 @@
 }
 
 - (TypesettingBaselineBlock)baseline {
-    return ^(int baseline) {
+    return ^(NSInteger baseline) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSBaselineOffsetAttributeName value:@(baseline) range:range];
@@ -168,10 +168,10 @@
 
 
 - (TypesettingStrikeThroughBlock)strikeThrough {
-    return ^(int baseline) {
+    return ^(TSStrikeThrough strikeThroughStyle) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
-            [self.string addAttribute:NSStrikethroughStyleAttributeName value:@(baseline) range:range];
+            [self.string addAttribute:NSStrikethroughStyleAttributeName value:@(strikeThroughStyle) range:range];
         }
         return self;
     };
