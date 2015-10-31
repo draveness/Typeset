@@ -10,11 +10,29 @@
 
 @interface TypesetKit : NSObject
 
+typedef enum {
+    TSNoUnder = NSUnderlineStyleNone,
+    TSSingle = NSUnderlineStyleSingle,
+    TSThick = NSUnderlineStyleThick,
+    TSDouble = NSUnderlineStyleDouble,
+    TSPatternSolid = NSUnderlinePatternSolid,
+    TSPatternDot = NSUnderlinePatternDot,
+    TSPatternDash = NSUnderlinePatternDash,
+    TSPatternDashDot = NSUnderlinePatternDashDot,
+    TSPatternDotDot = NSUnderlinePatternDashDotDot,
+    TSByWord = NSUnderlineByWord
+} TSUnderline;
+
+// TSStrikeThrough is just a copy of TSUnderline
+typedef TSUnderline TSStrikeThrough;
+
 typedef TypesetKit *(^TypesettingIntegerBlock)(NSUInteger);
 typedef TypesetKit *(^TypesettingCGFloatBlock)(CGFloat);
 typedef TypesetKit *(^TypesettingRangeBlock)(NSRange);
 typedef TypesetKit *(^TypesettingStringBlock)(NSString *);
 typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
+typedef TypesetKit *(^TypesettingBaselineBlock)(NSInteger);
+typedef TypesetKit *(^TypesettingStrikeThroughBlock)(TSStrikeThrough);
 typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
 typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
@@ -36,7 +54,11 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingStringBlock)fontName;
 - (TypesettingCGFloatBlock)fontSize;
+
+- (TypesettingStrikeThroughBlock)strikeThrough;
+
 - (TypesettingFontBlock)font;
+- (TypesettingBaselineBlock)baseline;
 
 - (TypesettingIntegerBlock)underline;
 

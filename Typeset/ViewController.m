@@ -19,13 +19,19 @@
     [super viewDidLoad];
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
     [self.view addSubview:label];
+    label.numberOfLines = 0;
+    
     label.textAlignment = NSTextAlignmentCenter;
-    NSMutableAttributedString *mas = @"Hello typeset, hello".typeset.matchAll(@"Hello").fontSize(40)
+    
+    NSMutableAttributedString *mas = @"Hello typeset, hello.".typeset.matchAll(@"Hello").fontSize(40)
         .match(@"type").purple
         .match(@"set").blue
         .string;
+    
+    // You can keep adding typeset styles to the same attributed string.
+    NSMutableAttributedString *baselineTest =  @"This is a strikethrough test.".typeset.match(@"This").underline(1).match(@"is a").baseline(5).match(@"strikethrough").strikeThrough(TSSingle).match(@"test").strikeThrough(TSDouble).string;
 
-    label.attributedText = mas;
+    label.attributedText = mas.append(baselineTest);
 }
 
 @end
