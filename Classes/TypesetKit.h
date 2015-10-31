@@ -10,7 +10,7 @@
 
 @interface TypesetKit : NSObject
 
-typedef enum {
+typedef NS_ENUM(NSInteger, TSUnderline) {
     TSNoUnder = NSUnderlineStyleNone,
     TSSingle = NSUnderlineStyleSingle,
     TSThick = NSUnderlineStyleThick,
@@ -21,7 +21,7 @@ typedef enum {
     TSPatternDashDot = NSUnderlinePatternDashDot,
     TSPatternDotDot = NSUnderlinePatternDashDotDot,
     TSByWord = NSUnderlineByWord
-} TSUnderline;
+};
 
 // TSStrikeThrough is just a copy of TSUnderline
 typedef TSUnderline TSStrikeThrough;
