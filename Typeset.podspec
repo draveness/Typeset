@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Typeset"
-  s.version      = "2.0"
+  s.version      = "2.1"
   s.summary      = "An convenient and fast approach to create AttributedString"
   s.description  = <<-DESC
                    I create this repo, beacuse deal with NSAttributedString in ObjectiveC is so painful. And this project is inspired by ruby gem colorize. Use this to deal with string more easily.
