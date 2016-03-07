@@ -34,5 +34,8 @@
 
 - (NSMutableAttributedString *(^)(UIColor *))color;
 - (NSMutableAttributedString *(^)(NSUInteger))hexColor;
+- (NSMutableAttributedString *(^)(NSUInteger))fontSize;
+- (NSMutableAttributedString *(^)(NSString *))fontName;
+- (NSMutableAttributedString *(^)(NSString *, CGFloat))font;
 
 @end

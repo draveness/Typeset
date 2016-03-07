@@ -95,4 +95,22 @@
     };
 }
 
+- (NSMutableAttributedString *(^)(NSUInteger))fontSize {
+    return ^(NSUInteger fontSize) {
+        return self.typeset.fontSize(fontSize).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSString *))fontName {
+    return ^(NSString *fontName) {
+        return self.typeset.fontName(fontName).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSString *, CGFloat))font {
+    return ^(NSString *fontName, CGFloat fontSize) {
+        return self.typeset.font(fontName, fontSize).string;
+    };
+}
+
 @end

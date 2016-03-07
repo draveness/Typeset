@@ -35,4 +35,34 @@
     };
 }
 
+- (NSMutableAttributedString *(^)(UIColor *))color {
+    return ^(UIColor *color) {
+        return self.typeset.color(color).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSUInteger))hexColor {
+    return ^(NSUInteger hexColor) {
+        return self.typeset.hexColor(hexColor).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSUInteger))fontSize {
+    return ^(NSUInteger fontSize) {
+        return self.typeset.fontSize(fontSize).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSString *))fontName {
+    return ^(NSString *fontName) {
+        return self.typeset.fontName(fontName).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSString *, CGFloat))font {
+    return ^(NSString *fontName, CGFloat fontSize) {
+        return self.typeset.font(fontName, fontSize).string;
+    };
+}
+
 @end
