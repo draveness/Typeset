@@ -134,6 +134,7 @@ If you want to change both font size or name, use `font(name, size)`.
 
 ```
 @"Hello".typeset.font(@"Helvetica, 40.0).string;
+@"Hello".font(@"Helvetica, 40.0);
 ```
 
 ## Underline
