@@ -68,6 +68,8 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingIntegerBlock)ligature;
 
+- (TypesettingCGFloatBlock)kern;
+
 - (TypesettingIntegerBlock)lineBreakMode;
 
 - (TypesettingIntegerBlock)textAlignment;

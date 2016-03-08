@@ -260,6 +260,17 @@
     };
 }
 
+- (TypesettingCGFloatBlock)kern {
+    return ^(CGFloat kern) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSKernAttributeName value:@(kern) range:range];
+        }
+        return self;
+    };
+}
+
 - (TypesettingIntegerBlock) lineBreakMode {
     return ^(NSUInteger lineBreakMode) {
         for (NSValue *value in self.attributeRanges) {
