@@ -27,8 +27,8 @@
 
     label.textAlignment = NSTextAlignmentCenter;
     label.typesetBlock = TS.matchAll(@"Hello").fontSize(40)
-    .match(@"type").purple
-    .match(@"set").blue.ST;
+                           .match(@"type").purple
+                           .match(@"set").blue.ST;
 
 //
 //    // You can keep adding typeset styles to the same attributed string.
