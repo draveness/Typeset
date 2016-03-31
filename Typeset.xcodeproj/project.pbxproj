@@ -20,6 +20,9 @@
 		183D50A41B13F8200041B180 /* TypesetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50A11B13F8200041B180 /* TypesetKit.m */; };
 		188212871B13FF3700322397 /* NSMutableAttributedString+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */; };
 		7219A74B1CACCC0B00D53165 /* UILabel+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */; };
+		7219A7521CACD79F00D53165 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7219A74F1CACD79F00D53165 /* LICENSE */; };
+		7219A7531CACD79F00D53165 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7219A7501CACD79F00D53165 /* README.md */; };
+		7219A7541CACD79F00D53165 /* Typeset.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7219A7511CACD79F00D53165 /* Typeset.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Typeset.m"; sourceTree = "<group>"; };
 		7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Typeset.h"; sourceTree = "<group>"; };
 		7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Typeset.m"; sourceTree = "<group>"; };
+		7219A74F1CACD79F00D53165 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7219A7501CACD79F00D53165 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7219A7511CACD79F00D53165 /* Typeset.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Typeset.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 		183D50681B13F8110041B180 = {
 			isa = PBXGroup;
 			children = (
+				7219A74F1CACD79F00D53165 /* LICENSE */,
+				7219A7501CACD79F00D53165 /* README.md */,
+				7219A7511CACD79F00D53165 /* Typeset.podspec */,
 				183D50731B13F8110041B180 /* Typeset */,
 				183D508D1B13F8110041B180 /* TypesetTests */,
 				183D50721B13F8110041B180 /* Products */,
@@ -264,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				183D50801B13F8110041B180 /* Main.storyboard in Resources */,
+				7219A7541CACD79F00D53165 /* Typeset.podspec in Resources */,
 				183D50851B13F8110041B180 /* LaunchScreen.xib in Resources */,
+				7219A7521CACD79F00D53165 /* LICENSE in Resources */,
 				183D50821B13F8110041B180 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +296,7 @@
 			files = (
 				181B1A881B18124D00E9BEA3 /* NSValue+Range.m in Sources */,
 				183D507D1B13F8110041B180 /* ViewController.m in Sources */,
+				7219A7531CACD79F00D53165 /* README.md in Sources */,
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
 				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
