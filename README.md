@@ -142,6 +142,12 @@ Typeset providing all the built-in colors in UIKit. So you can use them easily.
 - (TypesettingStringBlock)fontName;
 - (TypesettingCGFloatBlock)fontSize;
 - (TypesettingFontBlock)font;
+
+- (TypesetKit *)regular;
+- (TypesetKit *)light;
+- (TypesetKit *)bold;
+- (TypesetKit *)italic;
+- (TypesetKit *)thin;
 ```
 
 Use `fontSize(size)` `fontName(name)` to change a string's font size or name.
