@@ -214,7 +214,7 @@
             range = [value rangeValue];
 
             if (!font) {
-                font = [UIFont systemFontOfSize:14];
+                font = [UIFont systemFontOfSize:17];
                 font = [font fontWithFontWeight:fontWeight];
             }
             [self.string addAttribute:NSFontAttributeName value:font range:range];
