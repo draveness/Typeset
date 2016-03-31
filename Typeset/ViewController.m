@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Typeset.h"
 
+
 @interface ViewController ()
 
 @end
@@ -22,11 +23,10 @@
     label.numberOfLines = 0;
 
     label.textAlignment = NSTextAlignmentCenter;
-//    label.typesetBlock = TS.matchAll(@"Hello").fontSize(40)
-//                           .match(@"type").purple
-//                           .match(@"set").blue.ST;
-    label.typesetBlock = TS.bold.ST;
-//
+    label.typesetBlock = TS.matchAll(@"Hello").fontSize(40)
+                           .match(@"type").purple
+                           .match(@"set").blue.ST;
+
 //    // You can keep adding typeset styles to the same attributed string.
 //    NSMutableAttributedString *baselineTest =  @"This is a strikethrough test.".typeset.match(@"This").underline(1).match(@"is a").baseline(5).match(@"strikethrough").strikeThrough(TSSingle).match(@"test").strikeThrough(TSDouble).string;
 
