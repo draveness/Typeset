@@ -49,14 +49,14 @@ This is very powerful and easy to read and write.
 ## Podfile
 
 ```
-pod "Typeset", "~> 2.2"
+pod "Typeset", "~> 3.0"
 ```
 
 ## Usage
 
 Add one line of code to your precompiled header, or import it where you need.
 
-```
+```objectivec
 #import "Typeset.h"
 ```
 
@@ -64,7 +64,7 @@ Add one line of code to your precompiled header, or import it where you need.
 
 Using Typeset to deal with string is very easily. You should send `typeset` method to string first, customize it and send message `string` as last to get the final attributed string.
 
-```
+```objectivec
 NSMutableAttributedString *mas = @"Hello typeset".typeset
    .match(@"Hello").fontSize(40)
    .match(@"type").red
@@ -75,6 +75,18 @@ NSMutableAttributedString *mas = @"Hello typeset".typeset
 
 ![](./jpg/1.png)
 
+## UILabel Support
+
+We add `typesetBlock` to UILabel, and you can directly set it's text style with:
+
+```objectivec
+label.typesetBlock = TS.matchAll(@"Hello").fontSize(40)
+                       .match(@"type").purple
+                       .match(@"set").blue.ST;
+label.text = @"Hello typeset, hello.";
+```
+
+
 ## Swift 
 
 **If you would like to use chainable syntax to create attributed string with swift, use [Crotalus](https://github.com/Draveness/Crotalus) instread**
@@ -84,7 +96,7 @@ NSMutableAttributedString *mas = @"Hello typeset".typeset
 
 If you want to colorize a literal string to red.
  
-```
+```objectivec
 @"Hello".typeset.red.string;
 ```
 
@@ -92,7 +104,7 @@ This will return a `NSMutableAttributedString with red color.
 
 Typeset also provide a neat way to do this.
 
-```
+```objectivec
 // The same as '@"Hello".typeset.red.string;'
 @"Hello".red;
 @"Hello".green;
@@ -102,7 +114,7 @@ Typeset also provide a neat way to do this.
 
 Typeset providing all the built-in colors in UIKit. So you can use them easily.
 
-```
+```objectivec
 - (TypesetKit *)black;
 - (TypesetKit *)darkGray;
 - (TypesetKit *)lightGray;
@@ -125,14 +137,14 @@ Typeset providing all the built-in colors in UIKit. So you can use them easily.
 
 Use `fontSize(size)` `fontName(name)` to change a string's font size or name.
 
-```
+```objectivec
 @"Hello".typeset.fontSize(40.0).string;
 @"Hello".typeset.fontName(@"Helvetica").string;
 ```
 
 If you want to change both font size or name, use `font(name, size)`.
 
-```
+```objectivec
 @"Hello".typeset.font(@"Helvetica, 40.0).string;
 @"Hello".font(@"Helvetica, 40.0);
 ```
@@ -141,7 +153,7 @@ If you want to change both font size or name, use `font(name, size)`.
 
 Use `underline(style)` adding underline to string.
 
-```
+```objectivec
 @"Hello".typeset.underline(NSUnderlineStyleSingle).string;
 ```
 
@@ -157,7 +169,7 @@ Typeset change total string by default. But you can use these method to change p
 
 If you want to change `He` of `Hello` to red.
 
-```
+```objectivec
 @"Hello".typeset.from(0).to(2).red.string;
 @"Hello".typeset.location(0).length(2).red.string;
 @"Hello".typeset.range(NSMakeRange(0,2)).red.string;
@@ -172,7 +184,7 @@ If you want to change `He` of `Hello` to red.
 
 Typeset provide a more elegant method `append` to concat mutiple `NSMutableAttributedString`.
 
-```
+```objectivec
 mas.append(mas).append(mas);
 ```
 
