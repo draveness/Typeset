@@ -14,4 +14,6 @@
 #import "NSString+Typeset.h"
 #import "NSMutableAttributedString+Typeset.h"
 
+#import "UILabel+Typeset.h"
+
 #endif

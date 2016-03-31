@@ -19,6 +19,7 @@
 		183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D509F1B13F8200041B180 /* TypesetKit+Color.m */; };
 		183D50A41B13F8200041B180 /* TypesetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D50A11B13F8200041B180 /* TypesetKit.m */; };
 		188212871B13FF3700322397 /* NSMutableAttributedString+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */; };
+		7219A74B1CACCC0B00D53165 /* UILabel+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		183D50A11B13F8200041B180 /* TypesetKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesetKit.m; sourceTree = "<group>"; };
 		188212851B13FF3700322397 /* NSMutableAttributedString+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Typeset.h"; sourceTree = "<group>"; };
 		188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Typeset.m"; sourceTree = "<group>"; };
+		7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Typeset.h"; sourceTree = "<group>"; };
+		7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Typeset.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,34 @@
 			isa = PBXGroup;
 			children = (
 				183D509D1B13F8200041B180 /* Typeset.h */,
+				7219A74E1CACCD8400D53165 /* Core */,
+				7219A74D1CACCD7300D53165 /* Categoty */,
+				7219A74C1CACCC0F00D53165 /* UIKit */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		7219A74C1CACCC0F00D53165 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */,
+				7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		7219A74D1CACCD7300D53165 /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				181B1A861B18124D00E9BEA3 /* NSValue+Range.h */,
+				181B1A871B18124D00E9BEA3 /* NSValue+Range.m */,
+			);
+			name = Categoty;
+			sourceTree = "<group>";
+		};
+		7219A74E1CACCD8400D53165 /* Core */ = {
+			isa = PBXGroup;
+			children = (
 				183D50A01B13F8200041B180 /* TypesetKit.h */,
 				183D50A11B13F8200041B180 /* TypesetKit.m */,
 				183D509E1B13F8200041B180 /* TypesetKit+Color.h */,
@@ -148,11 +179,9 @@
 				183D509C1B13F8200041B180 /* NSString+Typeset.m */,
 				188212851B13FF3700322397 /* NSMutableAttributedString+Typeset.h */,
 				188212861B13FF3700322397 /* NSMutableAttributedString+Typeset.m */,
-				181B1A861B18124D00E9BEA3 /* NSValue+Range.h */,
-				181B1A871B18124D00E9BEA3 /* NSValue+Range.m */,
 			);
-			path = Classes;
-			sourceTree = SOURCE_ROOT;
+			name = Core;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -259,6 +288,7 @@
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
 				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
+				7219A74B1CACCC0B00D53165 /* UILabel+Typeset.m in Sources */,
 				188212871B13FF3700322397 /* NSMutableAttributedString+Typeset.m in Sources */,
 				183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */,
 				183D50771B13F8110041B180 /* main.m in Sources */,

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "Typeset.h"
 
+#define <#macro#>
+
 @interface ViewController ()
 
 @end
