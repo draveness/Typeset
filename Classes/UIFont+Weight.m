@@ -72,7 +72,8 @@
 }
 
 - (NSDictionary<NSNumber *, NSString *> *)fontWeightDictionary {
-    return @{@(TSFontWeightRegular): @"Regular",
+    return @{
+             @(TSFontWeightRegular): @"Regular",
              @(TSFontWeightThin): @"Thin",
              @(TSFontWeightLight): @"Light",
              @(TSFontWeightItalic): @"Italic",
