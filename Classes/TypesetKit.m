@@ -8,6 +8,7 @@
 
 #import "TypesetKit.h"
 #import "NSValue+Range.h"
+#import "UIFont+Weight.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -203,6 +204,43 @@
         
         return self;
     };
+}
+
+- (TypesetKit *)changeFontWeight:(TSFontWeight)fontWeight {
+    if (self.string.length) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
+            range = [value rangeValue];
+
+            if (!font) {
+                font = [UIFont systemFontOfSize:14];
+                font = [font fontWithFontWeight:fontWeight];
+            }
+            [self.string addAttribute:NSFontAttributeName value:font range:range];
+        }
+    }
+    return self;
+}
+
+- (TypesetKit *)regular {
+    return [self changeFontWeight:TSFontWeightRegular];
+}
+
+- (TypesetKit *)light {
+    return [self changeFontWeight:TSFontWeightLight];
+}
+
+- (TypesetKit *)bold {
+    return [self changeFontWeight:TSFontWeightBold];
+}
+
+- (TypesetKit *)italic {
+    return [self changeFontWeight:TSFontWeightItalic];
+}
+
+- (TypesetKit *)thin {
+    return [self changeFontWeight:TSFontWeightThin];
 }
 
 - (TypesettingCGFloatBlock)fontSize {

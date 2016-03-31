@@ -130,10 +130,19 @@ Typeset providing all the built-in colors in UIKit. So you can use them easily.
 - (TypesetKit *)purple;
 - (TypesetKit *)brown;
 - (TypesetKit *)clear;
+
+- (TypesettingColorBlock)color;
+- (TypesettingIntegerBlock)hexColor; // @"string".typeset.hexColor(0xffffff).string
 ```
 
 
 ## Font
+
+```objectivec
+- (TypesettingStringBlock)fontName;
+- (TypesettingCGFloatBlock)fontSize;
+- (TypesettingFontBlock)font;
+```
 
 Use `fontSize(size)` `fontName(name)` to change a string's font size or name.
 
@@ -149,15 +158,7 @@ If you want to change both font size or name, use `font(name, size)`.
 @"Hello".font(@"Helvetica, 40.0);
 ```
 
-## Underline
-
-Use `underline(style)` adding underline to string.
-
-```objectivec
-@"Hello".typeset.underline(NSUnderlineStyleSingle).string;
-```
-
-## Change Part of String
+## Match Part of String
 
 Typeset change total string by default. But you can use these method to change part of string.
 
@@ -186,6 +187,38 @@ Typeset provide a more elegant method `append` to concat mutiple `NSMutableAttri
 
 ```objectivec
 mas.append(mas).append(mas);
+```
+
+## Style
+
+```objectivec
+- (TypesettingStrikeThroughBlock)strikeThrough;
+
+- (TypesettingBaselineBlock)baseline;
+
+- (TypesettingIntegerBlock)underline;
+
+- (TypesettingStringBlock)link;
+
+- (TypesettingStringBlock)append;
+
+- (TypesettingIntegerBlock)ligature;
+
+- (TypesettingCGFloatBlock)kern;
+
+- (TypesettingIntegerBlock)lineBreakMode;
+
+- (TypesettingIntegerBlock)textAlignment;
+
+- (TypesettingCGFloatBlock)lineSpacing;
+```
+
+### Underline
+
+Use `underline(style)` adding underline to string.
+
+```objectivec
+@"Hello".typeset.underline(NSUnderlineStyleSingle).string;
 ```
 
 # Contribute

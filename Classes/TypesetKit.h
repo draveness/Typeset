@@ -55,6 +55,11 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 - (TypesettingStringBlock)fontName;
 - (TypesettingCGFloatBlock)fontSize;
 - (TypesettingFontBlock)font;
+- (TypesetKit *)regular;
+- (TypesetKit *)light;
+- (TypesetKit *)bold;
+- (TypesetKit *)italic;
+- (TypesetKit *)thin;
 
 - (TypesettingStrikeThroughBlock)strikeThrough;
 
