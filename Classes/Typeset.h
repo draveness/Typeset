@@ -16,4 +16,7 @@
 
 #import "UILabel+Typeset.h"
 
+#define TS ^(NSString *s) { return s.typeset
+#define ST string;}
+
 #endif
