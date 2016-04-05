@@ -1,3 +1,4 @@
+
 //
 //  UITextField+Typeset.m
 //  Typeset
@@ -53,7 +54,19 @@
 
 - (void)setTypesetBlock:(NSAttributedString *(^)(NSString *))typesetBlock {
     if (self.text) self.attributedText = typesetBlock(self.text);
+
+    // Call textFieldDidChange: method when text changed
+    [self addTarget:self
+             action:@selector(textFieldDidChange:)
+
+   forControlEvents:UIControlEventEditingChanged];
     objc_setAssociatedObject(self, @selector(typesetBlock), [typesetBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)textFieldDidChange:(UITextField *)textField {
+    if (textField.typesetBlock && textField.text) {
+        textField.attributedText = textField.typesetBlock(textField.text);
+    }
 }
 
 @end

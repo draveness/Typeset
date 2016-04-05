@@ -15,6 +15,7 @@
 #import "NSMutableAttributedString+Typeset.h"
 
 #import "UILabel+Typeset.h"
+#import "UITextField+Typeset.h"
 
 #define TSBlock(block) ^(NSString *s) { return s.typeset.block.string; }
 
