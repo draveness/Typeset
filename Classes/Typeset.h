@@ -16,7 +16,6 @@
 
 #import "UILabel+Typeset.h"
 
-#define TS ^(NSString *s) { return s.typeset
-#define ST string;}
+#define TSBlock(block) ^(NSString *s) { return s.typeset.block.string; }
 
 #endif
