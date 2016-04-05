@@ -24,6 +24,7 @@
 		7219A7531CACD79F00D53165 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7219A7501CACD79F00D53165 /* README.md */; };
 		7219A7541CACD79F00D53165 /* Typeset.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7219A7511CACD79F00D53165 /* Typeset.podspec */; };
 		7219A7571CACDAD000D53165 /* UIFont+Weight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7219A7561CACDAD000D53165 /* UIFont+Weight.m */; };
+		7258DF001CB3618200C8762B /* UITextField+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		7219A7511CACD79F00D53165 /* Typeset.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Typeset.podspec; sourceTree = "<group>"; };
 		7219A7551CACDAD000D53165 /* UIFont+Weight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Weight.h"; sourceTree = "<group>"; };
 		7219A7561CACDAD000D53165 /* UIFont+Weight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Weight.m"; sourceTree = "<group>"; };
+		7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Typeset.h"; sourceTree = "<group>"; };
+		7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Typeset.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 			children = (
 				7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */,
 				7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */,
+				7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */,
+				7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
 				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
 				7219A74B1CACCC0B00D53165 /* UILabel+Typeset.m in Sources */,
+				7258DF001CB3618200C8762B /* UITextField+Typeset.m in Sources */,
 				188212871B13FF3700322397 /* NSMutableAttributedString+Typeset.m in Sources */,
 				183D50A21B13F8200041B180 /* NSString+Typeset.m in Sources */,
 				183D50771B13F8110041B180 /* main.m in Sources */,
