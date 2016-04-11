@@ -78,7 +78,7 @@
 
 - (TypesettingIntegerBlock)length {
     return ^(NSUInteger length) {
-        if (self.attributeLength != -1) {
+        if (self.attributeLocation != -1) {
             [self removeAllAttributeRanges];
             [self.attributeRanges addObject:[NSValue valueWithLocation:self.attributeLocation length:length]];
         }
