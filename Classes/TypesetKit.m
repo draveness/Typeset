@@ -158,7 +158,7 @@
 }
 
 - (TypesettingBaselineBlock)baseline {
-    return ^(NSInteger baseline) {
+    return ^(CGFloat baseline) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSBaselineOffsetAttributeName value:@(baseline) range:range];
@@ -312,7 +312,7 @@
     };
 }
 
-- (TypesettingIntegerBlock) lineBreakMode {
+- (TypesettingIntegerBlock)lineBreakMode {
     return ^(NSUInteger lineBreakMode) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];

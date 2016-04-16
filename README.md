@@ -5,10 +5,10 @@
 <p align="center">
 [![Version](http://img.shields.io/cocoapods/v/Typeset.svg?style=flat)](http://cocoadocs.org/docsets/Typeset) [![Build Status](https://travis-ci.org/Draveness/Typeset.svg?branch=1.0.0)](https://travis-ci.org/Draveness/Typeset) ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg) ![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 
-
 ----
 
-Typeset makes it easy to create  `NSAttributedString`
+
+Typeset makes it easy to create `NSAttributedString`
 
 ```
 @"Hello typeset".typeset
@@ -16,18 +16,6 @@ Typeset makes it easy to create  `NSAttributedString`
    .match(@"type").purple
    .match(@"set").blue
    .string;
-```
-
-# How To Get Started
-
-## Installation with CocoaPods
-
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like DKNightVersion in your projects. See the [Get Started section](https://cocoapods.org/#get_started) for more details.
-
-## Podfile
-
-```
-pod "Typeset"
 ```
 
 # Usage
@@ -55,24 +43,37 @@ pod "Typeset"
 	label.text = @"Hello typeset, hello.";
 	```
 
-	![Demo](./jpg/Demo.png)
+## References
+
+### Attributes
+
+| Dictionary Key                      | `Typeset` Method                                       |
+| ----------------------------------- | ------------------------------------------------------ |
+| `NSFontAttributeName`               | `font(UIFont font)`                                    |
+|                                     | `fontSize(CGFloat size)`                               |
+|                                     | `fontName(NSString name)`                              |
+| `NSForegroundColorAttributeName`    | `color(UIColor color)`                                 |
+|                                     | `hexColor(CGFloat hexColor)`                           |
+| `NSKernAttributeName`               | `kern(CGFloat kern)`                                   |
+| `NSUnderlineStyleAttributeName`     | `underline(TSUnderline underline)`                     |
+| `NSBaselineOffsetAttributeName`     | `baseline(CGFloat baseline)`                           |
+| `NSStrikethroughStyleAttributeName` | `strikeThrough(TSStrikeThrough strikeThrough)`         |
+| `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
+|                                     | `textAlignment(NSTextAlignment textAlignment)`         |
+|                                     | `lineSpacing(CGFloat lineSpacing)`                     |
 
 
-## How to use
+## Installation 
 
-Using Typeset to deal with string is very easily. You should send `typeset` method to string first, customize it and send message `string` as last to get the final attributed string.
+### CocoaPods
 
-```objectivec
-NSMutableAttributedString *mas = @"Hello typeset".typeset
-   .match(@"Hello").fontSize(40)
-   .match(@"type").red
-   .match(@"set").green
-   .underline(NSUnderlineStyleSingle)
-   .append(@"He").string;
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like DKNightVersion in your projects. See the [Get Started section](https://cocoapods.org/#get_started) for more details.
+
+## Podfile
+
 ```
-
-![](./jpg/1.png)
-
+pod "Typeset"
+```
 
 ## Colorize
 
@@ -216,7 +217,6 @@ Feel free to open an issue or pull request, if you need help or there is a bug.
 # Contact
 
 - Powered by [Draveness](http://github.com/draveness)
-- Personal website [DeltaX](http://deltax.me)
 
 # License
 
