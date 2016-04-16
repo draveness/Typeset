@@ -24,6 +24,15 @@
 		7219A7531CACD79F00D53165 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7219A7501CACD79F00D53165 /* README.md */; };
 		7219A7541CACD79F00D53165 /* Typeset.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7219A7511CACD79F00D53165 /* Typeset.podspec */; };
 		7219A7571CACDAD000D53165 /* UIFont+Weight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7219A7561CACDAD000D53165 /* UIFont+Weight.m */; };
+		724DBF141CC14433008C2C50 /* Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 183D509D1B13F8200041B180 /* Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF151CC14433008C2C50 /* TypesetKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 183D50A01B13F8200041B180 /* TypesetKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF161CC14433008C2C50 /* TypesetKit+Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 183D509E1B13F8200041B180 /* TypesetKit+Color.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF171CC14433008C2C50 /* NSString+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 183D509B1B13F8200041B180 /* NSString+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF181CC14433008C2C50 /* NSMutableAttributedString+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 188212851B13FF3700322397 /* NSMutableAttributedString+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF191CC14433008C2C50 /* NSValue+Range.h in Headers */ = {isa = PBXBuildFile; fileRef = 181B1A861B18124D00E9BEA3 /* NSValue+Range.h */; };
+		724DBF1A1CC14433008C2C50 /* UIFont+Weight.h in Headers */ = {isa = PBXBuildFile; fileRef = 7219A7551CACDAD000D53165 /* UIFont+Weight.h */; };
+		724DBF1B1CC14433008C2C50 /* UILabel+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		724DBF1C1CC14433008C2C50 /* UITextField+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7258DF001CB3618200C8762B /* UITextField+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +213,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		724DBF131CC1441F008C2C50 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				724DBF151CC14433008C2C50 /* TypesetKit.h in Headers */,
+				724DBF181CC14433008C2C50 /* NSMutableAttributedString+Typeset.h in Headers */,
+				724DBF171CC14433008C2C50 /* NSString+Typeset.h in Headers */,
+				724DBF141CC14433008C2C50 /* Typeset.h in Headers */,
+				724DBF1B1CC14433008C2C50 /* UILabel+Typeset.h in Headers */,
+				724DBF161CC14433008C2C50 /* TypesetKit+Color.h in Headers */,
+				724DBF1C1CC14433008C2C50 /* UITextField+Typeset.h in Headers */,
+				724DBF191CC14433008C2C50 /* NSValue+Range.h in Headers */,
+				724DBF1A1CC14433008C2C50 /* UIFont+Weight.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		183D50701B13F8110041B180 /* Typeset */ = {
 			isa = PBXNativeTarget;
@@ -212,6 +240,7 @@
 				183D506D1B13F8110041B180 /* Sources */,
 				183D506E1B13F8110041B180 /* Frameworks */,
 				183D506F1B13F8110041B180 /* Resources */,
+				724DBF131CC1441F008C2C50 /* Headers */,
 			);
 			buildRules = (
 			);

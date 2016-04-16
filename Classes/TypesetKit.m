@@ -215,8 +215,8 @@
 
             if (!font) {
                 font = [UIFont systemFontOfSize:17];
-                font = [font fontWithFontWeight:fontWeight];
             }
+            font = [font fontWithFontWeight:fontWeight];
             [self.string addAttribute:NSFontAttributeName value:font range:range];
         }
     }
@@ -250,7 +250,10 @@
                 NSRange range = [value rangeValue];
                 UIFont *font = [self.string attribute:NSFontAttributeName atIndex:0 effectiveRange:&range];
                 range = [value rangeValue];
-                if (!font) font = [UIFont systemFontOfSize:fontSize];
+                if (!font) {
+                    font = [UIFont systemFontOfSize:17];
+                }
+                font = [UIFont systemFontOfSize:fontSize];
                 [self.string addAttribute:NSFontAttributeName value:font range:range];
             }
         }
