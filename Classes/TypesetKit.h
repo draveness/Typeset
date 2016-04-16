@@ -11,16 +11,16 @@
 @interface TypesetKit : NSObject
 
 typedef NS_ENUM(NSInteger, TSUnderline) {
-    TSNoUnder = NSUnderlineStyleNone,
-    TSSingle = NSUnderlineStyleSingle,
-    TSThick = NSUnderlineStyleThick,
-    TSDouble = NSUnderlineStyleDouble,
-    TSPatternSolid = NSUnderlinePatternSolid,
-    TSPatternDot = NSUnderlinePatternDot,
-    TSPatternDash = NSUnderlinePatternDash,
-    TSPatternDashDot = NSUnderlinePatternDashDot,
-    TSPatternDotDot = NSUnderlinePatternDashDotDot,
-    TSByWord = NSUnderlineByWord
+    TSUnderlineNoUnder = NSUnderlineStyleNone,
+    TSUnderlineSingle = NSUnderlineStyleSingle,
+    TSUnderlineThick = NSUnderlineStyleThick,
+    TSUnderlineDouble = NSUnderlineStyleDouble,
+    TSUnderlinePatternSolid = NSUnderlinePatternSolid,
+    TSUnderlinePatternDot = NSUnderlinePatternDot,
+    TSUnderlinePatternDash = NSUnderlinePatternDash,
+    TSUnderlinePatternDashDot = NSUnderlinePatternDashDot,
+    TSUnderlinePatternDotDot = NSUnderlinePatternDashDotDot,
+    TSUnderlineByWord = NSUnderlineByWord
 };
 
 // TSStrikeThrough is just a copy of TSUnderline
