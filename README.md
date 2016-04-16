@@ -49,7 +49,7 @@ This is very powerful and easy to read and write.
 ## Podfile
 
 ```
-pod "Typeset", "~> 3.1.0"
+pod "Typeset", "~> 3.1.1"
 ```
 
 ## Usage
@@ -244,16 +244,4 @@ Typeset is available under the MIT license. See the LICENSE file for more info.
 
 - Documentation
 - More features
-
-
-
-
-
-
-
-
-
-
-
-
 
