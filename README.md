@@ -8,43 +8,15 @@
 
 ----
 
-An convenient and fast approach to create `AttributedString`.
-
-This library is inspired by [colorize](https://github.com/fazibear/colorize) which is a ruby gem colorize string.
-
-Typeset give you a far more convenient and powerful way to manipulate attributed string.
-
-# The Old Way
-
-With the old way, create am attributed string is very complex and verbose.
+Typeset makes it easy to create  `NSAttributedString`
 
 ```
-NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] initWithString:@"Hello typeset"];
-NSRange range = [mas.string rangeOfString:@"Hello"];
-[mas addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:40] range:range];
-range = [mas.string rangeOfString:@"type"];
-[mas addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range];
-range = [mas.string rangeOfString:@"set"];
-[mas addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
-label.attributedText = mas;
-```
-
-# With Typeset
-
-```
-NSMutableAttributedString *mas = @"Hello typeset".typeset
+@"Hello typeset".typeset
    .match(@"Hello").fontSize(40)
    .match(@"type").purple
    .match(@"set").blue
    .string;
-label.attributedText = mas;
 ```
-
-![Demo](./jpg/Demo.png)
-
-This is very powerful and easy to read and write.
-
-----
 
 # How To Get Started
 
@@ -55,16 +27,36 @@ This is very powerful and easy to read and write.
 ## Podfile
 
 ```
-pod "Typeset", "~> 3.1.1"
+pod "Typeset"
 ```
 
-## Usage
+# Usage
 
-Add one line of code to your precompiled header, or import it where you need.
++ Method chaining
+	+ All the method for typeset returns a `self` object to chaining itself.
 
-```objectivec
-#import "Typeset.h"
-```
+		```
+		@"Hello typeset".typeset
+		   .match(@"Hello").fontSize(40)
+		   .match(@"type").purple
+		   .match(@"set").blue
+		   .string;
+		```
+		
+	> call `typeset` method first and call `string` at last returns a `NSAttributedString`.
+		
++ UILabel support
+	+ Add `typesetBlock` to UILabel, and you can directly set it's text style with:
+
+	```objectivec
+	label.typesetBlock = TSBlock(fontSize(40)
+	                       .match(@"type").purple
+	                       .match(@"set").blue);
+	label.text = @"Hello typeset, hello.";
+	```
+
+	![Demo](./jpg/Demo.png)
+
 
 ## How to use
 
@@ -80,22 +72,6 @@ NSMutableAttributedString *mas = @"Hello typeset".typeset
 ```
 
 ![](./jpg/1.png)
-
-## UILabel Support
-
-We add `typesetBlock` to UILabel, and you can directly set it's text style with:
-
-```objectivec
-label.typesetBlock = TS.matchAll(@"Hello").fontSize(40)
-                       .match(@"type").purple
-                       .match(@"set").blue.ST;
-label.text = @"Hello typeset, hello.";
-```
-
-
-## Swift 
-
-**If you would like to use chainable syntax to create attributed string with swift, use [Crotalus](https://github.com/Draveness/Crotalus) instread**
 
 
 ## Colorize
