@@ -61,13 +61,15 @@ Typeset makes it easy to create `NSAttributedString`
 	
 	> These lines of code all make `@"He"` of `@"Hello"` to red
 	
-	| Match Method                                          | Explain                                                |
-	| ----------------------------------------------------- | ------------------------------------------------------ |
-	| `from(NSUInteger)` `to(NSUInteger)`                   |                                                        |
-	| `location(NSUInteger)` `length(NSUInteger)`           |                                                        |
-	| `range(NSRange)`                                      |                                                        |
-	| `match(NSString)`                                     | match the first substring                              |
-	| `matchAll(NSString)`                                  | match all the substring                                |
+	| Match Method                                           | Explain                                                |
+	| ------------------------------------------------------ | ------------------------------------------------------ |
+	| `from(NSUInteger)` `to(NSUInteger)`                    |                                                        |
+	| `location(NSUInteger)` `length(NSUInteger)`            |                                                        |
+	| `range(NSRange)`                                       |                                                        |
+    | `match(NSString *)`                                    | match the first substring                              |
+    | `matchWithOptions(NSString *, NSStringCompareOptions)` | match the first substring with options                 |
+	| `matchAll(NSString)`                                   | match all the substring                                |
+    | `matchAllWithOptions(NSString *, NSStringCompareOptions)`| match all the substring with options                 |
 
 + Convinient method
 	+ If you don't want to change some part of the string, and only want to **change the color or the font**, you call call these methods directly without calling `typeset` first
