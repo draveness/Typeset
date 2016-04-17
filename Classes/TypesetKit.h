@@ -20,7 +20,6 @@
 #define TypesetStrikeThroughBlock TypesetBlock(TSStrikeThrough)
 #define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
 #define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
-#define TypesetShadowBlock TypesetBlock(NSShadow *)
 
 
 @interface TypesetKit : NSObject
@@ -74,7 +73,7 @@
 
 - (TypesetCGFloatBlock)strokeWidth;
 
-- (TypesetShadowBlock)shadow;
+- (TypesetBlock(NSShadow *))shadow;
 
 - (TypesetStringBlock)textEffect;
 
@@ -86,5 +85,6 @@
 - (TypesetBlock(NSLineBreakMode))lineBreakMode;
 - (TypesetBlock(NSTextAlignment))textAlignment;
 - (TypesetCGFloatBlock)lineSpacing;
+
 
 @end

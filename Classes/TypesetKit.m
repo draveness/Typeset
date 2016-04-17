@@ -365,7 +365,7 @@
     };
 }
 
-- (TypesetShadowBlock)shadow {
+- (TypesetBlock(NSShadow *))shadow {
     return ^(NSShadow *shadow) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -404,6 +404,17 @@
             NSRange range = [value rangeValue];
 
             [self.string addAttribute:NSExpansionAttributeName value:@(expansion) range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesetBlock(NSTextAttachment *))textAttachment {
+    return ^(NSTextAttachment *textAttachment) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSAttachmentAttributeName value:textAttachment range:range];
         }
         return self;
     };
