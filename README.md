@@ -116,7 +116,7 @@ Typeset makes it easy to create `NSAttributedString`
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like DKNightVersion in your projects. See the [Get Started section](https://cocoapods.org/#get_started) for more details.
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like Typeset in your projects. See the [Get Started section](https://cocoapods.org/#get_started) for more details.
 
 ## Podfile
 
