@@ -7,6 +7,8 @@
 
 ----
 
+![](./images/Typeset.gif)
+
 
 Typeset makes it easy to create `NSAttributedString`
 
