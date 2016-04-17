@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./jpg/Typeset.png">
+<img src="./images/Typeset.png">
 </p>
 
 <p align="center">

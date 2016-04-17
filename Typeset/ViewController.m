@@ -14,39 +14,30 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    UILabel *label;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *label = [[UILabel alloc] init];
-    label.typesetBlock = TSBlock(matchAll(@"NSAttributedString").fontSize(30).blue.
-                                 match(@"efficiently").bold);
-
-    label.text = @"Deal with NSAttributedString efficiently.";
-    label.frame = CGRectMake(0, 0, 300, 200);
-//    [label sizeToFit];
+    label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    [self setupLabel];
     [self.view addSubview:label];
-    label.center = self.view.center;
+}
+
+- (void)setupLabel {
+    label.text = @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+
     label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentLeft;
 
-    label.textAlignment = NSTextAlignmentCenter;
-//    UITextField * textfield = [[UITextField alloc] initWithFrame:CGRectMake(0, self.view.frame.origin.y / 2, self.view.frame.size.width, self.view.frame.size.height)];
-//    [self.view addSubview:textfield];
-//    textfield.typesetBlock = TSBlock(matchAll(@"1").red);
-//
-//    textfield.delegate = self;
-
-//    // You can keep adding typeset styles to the same attributed string.
-//    NSMutableAttributedString *baselineTest =  @"This is a strikethrough test.".typeset.match(@"This").underline(1).match(@"is a").baseline(5).match(@"strikethrough").strikeThrough(TSSingle).match(@"test").strikeThrough(TSDouble).string;
-
-    UILabel *prompt = [[UILabel alloc] init];
-    prompt.attributedText = @"String below is created with: \n\n@\"Deal with NSAttributedString efficiently\".typeset.\nmatchAll(@\"NSAttributedString\").fontSize(30).blue.\nmatch(@\"efficiently\").bold.string)".typeset.fontSize(14.5).match(@"String below is created with:").fontSize(20).string;
-    [self.view addSubview:prompt];
-    prompt.frame = CGRectMake(0, 0, 350, 300);
-//    [prompt sizeToFit];
-    prompt.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
-    prompt.numberOfLines = 0;
+    label.typesetBlock = TSBlock(fontSize(30).light.kern(3).matchAll(@"in").red.matchAll(@"et").blue);
 
 }
+
+- (void)injected {
+    [self setupLabel];
+}
+
 
 @end
