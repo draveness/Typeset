@@ -55,11 +55,17 @@ Typeset makes it easy to create `NSAttributedString`
 
 | Dictionary Key                      | `Typeset` Method                                       |
 | ----------------------------------- | ------------------------------------------------------ |
-| `NSFontAttributeName`               | `font(UIFont font)`                                    |
+| `NSFontAttributeName`               | `font(NSString fontName, CGFloat size)`                |
 |                                     | `fontSize(CGFloat size)`                               |
 |                                     | `fontName(NSString name)`                              |
+|                                     | `regular`                                              |
+|                                     | `light`                                                |
+|                                     | `italic`                                               |
+|                                     | `thin`                                                 |
+|                                     | `bold`                                                 |
 | `NSForegroundColorAttributeName`    | `color(UIColor color)`                                 |
 |                                     | `hexColor(CGFloat hexColor)`                           |
+|                                     | `black` `darkGray` `lightGray` `white` `gray` `red` `green` `blue` `cyan` `yellow` `magenta` `orange` `purple` `brown` `clear`                                |
 | `NSKernAttributeName`               | `kern(CGFloat kern)`                                   |
 | `NSUnderlineStyleAttributeName`     | `underline(TSUnderline underline)`                     |
 | `NSBaselineOffsetAttributeName`     | `baseline(CGFloat baseline)`                           |
@@ -67,7 +73,6 @@ Typeset makes it easy to create `NSAttributedString`
 | `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
 |                                     | `textAlignment(NSTextAlignment textAlignment)`         |
 |                                     | `lineSpacing(CGFloat lineSpacing)`                     |
-
 
 ## Installation 
 
@@ -122,35 +127,6 @@ Typeset providing all the built-in colors in UIKit. So you can use them easily.
 
 - (TypesettingColorBlock)color;
 - (TypesettingIntegerBlock)hexColor; // @"string".typeset.hexColor(0xffffff).string
-```
-
-
-## Font
-
-```objectivec
-- (TypesettingStringBlock)fontName;
-- (TypesettingCGFloatBlock)fontSize;
-- (TypesettingFontBlock)font;
-
-- (TypesetKit *)regular;
-- (TypesetKit *)light;
-- (TypesetKit *)bold;
-- (TypesetKit *)italic;
-- (TypesetKit *)thin;
-```
-
-Use `fontSize(size)` `fontName(name)` to change a string's font size or name.
-
-```objectivec
-@"Hello".typeset.fontSize(40.0).string;
-@"Hello".typeset.fontName(@"Helvetica").string;
-```
-
-If you want to change both font size or name, use `font(name, size)`.
-
-```objectivec
-@"Hello".typeset.font(@"Helvetica, 40.0).string;
-@"Hello".font(@"Helvetica, 40.0);
 ```
 
 ## Match Part of String
