@@ -1,2 +1,0 @@
-/Users/apple/Library/Developer/Xcode/DerivedData/Typeset-hajdgcechkzcfvcgnmixhlrrfmib/Build/Products/Debug-iphonesimulator/Typeset.app
-
