@@ -167,12 +167,32 @@
     };
 }
 
+- (TypesettingCGFloatBlock)baselineOffset {
+    return ^(CGFloat baselineOffset) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSBaselineOffsetAttributeName value:@(baselineOffset) range:range];
+        }
+        return self;
+    };
+}
 
 - (TypesettingStrikeThroughBlock)strikeThrough {
     return ^(TSStrikeThrough strikeThroughStyle) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSStrikethroughStyleAttributeName value:@(strikeThroughStyle) range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingColorBlock)strikeThroughColor {
+    return ^(UIColor *strikeThroughColor) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSStrikethroughColorAttributeName value:strikeThroughColor range:range];
         }
         return self;
     };
@@ -272,6 +292,16 @@
     };
 }
 
+- (TypesettingColorBlock)underlineColor {
+    return ^(UIColor *underlineColor) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSUnderlineColorAttributeName value:underlineColor range:range];
+        }
+        return self;
+    };
+}
+
 - (TypesettingStringBlock)link {
     return ^(NSString *url) {
         for (NSValue *value in self.attributeRanges) {
@@ -352,6 +382,28 @@
             NSRange range = [value rangeValue];
 
             [self.string addAttribute:NSTextEffectAttributeName value:textEffect range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingCGFloatBlock)obliqueness {
+    return ^(CGFloat obliqueness) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSObliquenessAttributeName value:@(obliqueness) range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingCGFloatBlock)expansion {
+    return ^(CGFloat expansion) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSExpansionAttributeName value:@(expansion) range:range];
         }
         return self;
     };

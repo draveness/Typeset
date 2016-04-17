@@ -64,9 +64,15 @@ typedef TypesetKit *(^TypesettingShadowBlock)(NSShadow *);
 
 - (TypesettingStrikeThroughBlock)strikeThrough;
 
+- (TypesettingColorBlock)strikeThroughColor;
+
 - (TypesettingBaselineBlock)baseline;
 
+- (TypesettingCGFloatBlock)baselineOffset;
+
 - (TypesettingIntegerBlock)underline;
+
+- (TypesettingColorBlock)underlineColor;
 
 - (TypesettingStringBlock)link;
 
@@ -83,6 +89,10 @@ typedef TypesetKit *(^TypesettingShadowBlock)(NSShadow *);
 - (TypesettingShadowBlock)shadow;
 
 - (TypesettingStringBlock)textEffect;
+
+- (TypesettingCGFloatBlock)obliqueness;
+
+- (TypesettingCGFloatBlock)expansion;
 
 // NSMutableParagraphStyle
 - (TypesettingIntegerBlock)lineBreakMode;
