@@ -58,11 +58,7 @@ Typeset makes it easy to create `NSAttributedString`
 | `NSFontAttributeName`               | `font(NSString fontName, CGFloat size)`                |
 |                                     | `fontSize(CGFloat size)`                               |
 |                                     | `fontName(NSString name)`                              |
-|                                     | `regular`                                              |
-|                                     | `light`                                                |
-|                                     | `italic`                                               |
-|                                     | `thin`                                                 |
-|                                     | `bold`                                                 |
+|                                     | `regular` `light` `italic` `thin` `bold`               |
 | `NSForegroundColorAttributeName`    | `color(UIColor color)`                                 |
 |                                     | `hexColor(CGFloat hexColor)`                           |
 |                                     | `black` `darkGray` `lightGray` `white` `gray` `red` `green` `blue` `cyan` `yellow` `magenta` `orange` `purple` `brown` `clear`                                |
