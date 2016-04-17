@@ -312,6 +312,42 @@
     };
 }
 
+
+- (TypesettingColorBlock)strokeColor {
+    return ^(UIColor *strokeColor) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSStrokeColorAttributeName value:strokeColor range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingCGFloatBlock)strokeWidth {
+    return ^(CGFloat strokeWidth) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSStrokeWidthAttributeName value:@(strokeWidth) range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesettingShadowBlock)shadow {
+    return ^(NSShadow *shadow) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSShadowAttributeName value:shadow range:range];
+        }
+        return self;
+    };
+}
+
+#pragma mark - NSParagraphStyle
+
 - (TypesettingIntegerBlock)lineBreakMode {
     return ^(NSUInteger lineBreakMode) {
         for (NSValue *value in self.attributeRanges) {

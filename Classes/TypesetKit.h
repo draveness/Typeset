@@ -34,7 +34,8 @@ typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
 typedef TypesetKit *(^TypesettingBaselineBlock)(CGFloat);
 typedef TypesetKit *(^TypesettingStrikeThroughBlock)(TSStrikeThrough);
 typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
-typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
+typedef TypesetKit *(^TypesettingMatchBlock)(NSString *, NSStringCompareOptions);
+typedef TypesetKit *(^TypesettingShadowBlock)(NSShadow *);
 
 @property (nonatomic, strong) NSMutableAttributedString *string;
 
@@ -75,10 +76,14 @@ typedef TypesetKit *(^TypesettingMatchBlock)(NSString *,NSStringCompareOptions);
 
 - (TypesettingCGFloatBlock)kern;
 
+- (TypesettingColorBlock)strokeColor;
+- (TypesettingCGFloatBlock)strokeWidth;
+
+- (TypesettingShadowBlock)shadow;
+
+// NSMutableParagraphStyle
 - (TypesettingIntegerBlock)lineBreakMode;
-
 - (TypesettingIntegerBlock)textAlignment;
-
 - (TypesettingCGFloatBlock)lineSpacing;
 
 @end
