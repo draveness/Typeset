@@ -106,29 +106,6 @@ Typeset also provide a neat way to do this.
 @"Hello".hexColor(0x313131);
 ```
 
-Typeset providing all the built-in colors in UIKit. So you can use them easily.
-
-```objectivec
-- (TypesetKit *)black;
-- (TypesetKit *)darkGray;
-- (TypesetKit *)lightGray;
-- (TypesetKit *)white;
-- (TypesetKit *)gray;
-- (TypesetKit *)red;
-- (TypesetKit *)green;
-- (TypesetKit *)blue;
-- (TypesetKit *)cyan;
-- (TypesetKit *)yellow;
-- (TypesetKit *)magenta;
-- (TypesetKit *)orange;
-- (TypesetKit *)purple;
-- (TypesetKit *)brown;
-- (TypesetKit *)clear;
-
-- (TypesettingColorBlock)color;
-- (TypesettingIntegerBlock)hexColor; // @"string".typeset.hexColor(0xffffff).string
-```
-
 ## Match Part of String
 
 Typeset change total string by default. But you can use these method to change part of string.
@@ -158,38 +135,6 @@ Typeset provide a more elegant method `append` to concat mutiple `NSMutableAttri
 
 ```objectivec
 mas.append(mas).append(mas);
-```
-
-## Style
-
-```objectivec
-- (TypesettingStrikeThroughBlock)strikeThrough;
-
-- (TypesettingBaselineBlock)baseline;
-
-- (TypesettingIntegerBlock)underline;
-
-- (TypesettingStringBlock)link;
-
-- (TypesettingStringBlock)append;
-
-- (TypesettingIntegerBlock)ligature;
-
-- (TypesettingCGFloatBlock)kern;
-
-- (TypesettingIntegerBlock)lineBreakMode;
-
-- (TypesettingIntegerBlock)textAlignment;
-
-- (TypesettingCGFloatBlock)lineSpacing;
-```
-
-### Underline
-
-Use `underline(style)` adding underline to string.
-
-```objectivec
-@"Hello".typeset.underline(NSUnderlineStyleSingle).string;
 ```
 
 # Contribute
