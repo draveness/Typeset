@@ -53,7 +53,13 @@ Typeset makes it easy to create `NSAttributedString`
 	+ Typeset providing a series of method to match part of your string, you can use these method to select part of your string, and add attribute to it.
 
 	```objectivec
+	@"Hello".typeset.from(0).to(2).red.string;
+	@"Hello".typeset.location(0).length(2).red.string;
+	@"Hello".typeset.range(NSMakeRange(0,2)).red.string;
+	@"Hello".typeset.match(@"He").red.string;
 	```
+	
+	> These lines of code all make `@"He"` of `@"Hello"` to red
 	
 	| Match Method                                          | Explain                                                |
 	| ----------------------------------------------------- | ------------------------------------------------------ |
@@ -62,6 +68,14 @@ Typeset makes it easy to create `NSAttributedString`
 	| `range(NSRange)`                                      |                                                        |
 	| `match(NSString)`                                     | match the first substring                              |
 	| `matchAll(NSString)`                                  | match all the substring                                |
+
++ Convinient method
+	+ If you don't want to change some part of the string, and only want to **change the color or the font**, you call call these methods directly without calling `typeset` first
+
+	```objectivec
+	@"Hello".red
+	@"Hello".fontSize(20).red
+	```
 
 
 ## References
@@ -118,15 +132,6 @@ If you want to change `He` of `Hello` to red.
 
 > `match` method match the first pattern appear in the 
 > string, if you want to customize mutiple pattern, you should
-> not use this method.
-
-## Append
-
-Typeset provide a more elegant method `append` to concat mutiple `NSMutableAttributedString`.
-
-```objectivec
-mas.append(mas).append(mas);
-```
 
 # Contribute
 
