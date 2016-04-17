@@ -48,6 +48,21 @@ Typeset makes it easy to create `NSAttributedString`
 	                       .match(@"set").blue);
 	label.text = @"Hello typeset, hello.";
 	```
+	
++ Match part of string
+	+ Typeset providing a series of method to match part of your string, you can use these method to select part of your string, and add attribute to it.
+
+	```objectivec
+	```
+	
+	| Match Method                                          | Explain                                                |
+	| ----------------------------------------------------- | ------------------------------------------------------ |
+	| `from(NSUInteger)` `to(NSUInteger)`                   |                                                        |
+	| `location(NSUInteger)` `length(NSUInteger)`           |                                                        |
+	| `range(NSRange)`                                      |                                                        |
+	| `match(NSString)`                                     | match the first substring                              |
+	| `matchAll(NSString)`                                  | match all the substring                                |
+
 
 ## References
 
@@ -80,26 +95,6 @@ Typeset makes it easy to create `NSAttributedString`
 
 ```
 pod "Typeset"
-```
-
-## Colorize
-
-If you want to colorize a literal string to red.
- 
-```objectivec
-@"Hello".typeset.red.string;
-```
-
-This will return a `NSMutableAttributedString with red color.
-
-Typeset also provide a neat way to do this.
-
-```objectivec
-// The same as '@"Hello".typeset.red.string;'
-@"Hello".red;
-@"Hello".green;
-@"Hello".color([UIColor whiteColor]);
-@"Hello".hexColor(0x313131);
 ```
 
 ## Match Part of String
