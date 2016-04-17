@@ -16,8 +16,6 @@
 #define TypesetRangeBlock TypesetBlock(NSRange)
 #define TypesetStringBlock TypesetBlock(NSString *)
 #define TypesetColorBlock TypesetBlock(UIColor *)
-#define TypesetBaselineBlock TypesetBlock(CGFloat)
-#define TypesetStrikeThroughBlock TypesetBlock(TSStrikeThrough)
 #define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
 #define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
 
@@ -53,9 +51,7 @@
 
 - (TypesetColorBlock)strikeThroughColor;
 
-- (TypesetBaselineBlock)baseline;
-
-- (TypesetCGFloatBlock)baselineOffset;
+- (TypesetCGFloatBlock)baseline;
 
 - (TypesetBlock(NSUnderlineStyle))underline;
 

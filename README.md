@@ -92,9 +92,19 @@ Typeset makes it easy to create `NSAttributedString`
 |                                     | `hexColor(CGFloat hexColor)`                           |
 |                                     | `black` `darkGray` `lightGray` `white` `gray` `red` `green` `blue` `cyan` `yellow` `magenta` `orange` `purple` `brown` `clear`                                |
 | `NSKernAttributeName`               | `kern(CGFloat kern)`                                   |
-| `NSUnderlineStyleAttributeName`     | `underline(TSUnderline underline)`                     |
+| `NSUnderlineStyleAttributeName`     | `underline(NSUnderlineStyle underline)`                |
+| `NSUnderlineColorAttributeName`     | `underlineColor(UIColor *underlineColor)`              |
 | `NSBaselineOffsetAttributeName`     | `baseline(CGFloat baseline)`                           |
-| `NSStrikethroughStyleAttributeName` | `strikeThrough(TSStrikeThrough strikeThrough)`         |
+| `NSStrikethroughStyleAttributeName` | `strikeThrough(NSUnderlineStyle strikeThrough)`        |
+| `NSStrikethroughColorAttributeName` | `strikeThroughColor(UIColor *underlineColor)`          |
+| `NSLinkAttributeName`               | `link(NSString *url)`                                  |
+| `NSLigatureAttributeName`           | `ligature(NSUInteger ligature)`                        |
+| `NSStrokeColorAttributeName`        | `strokeColor(UIColor *strokeColor)`                    |
+| `NSStrokeWidthAttributeName`        | `strokeWidth(CGFloat strokeWidth)`                     |
+| `NSShadowAttributeName`             | `shadow(NSShadow *shadow)`                             |
+| `NSTextEffectAttributeName`         | `textEffect(NSString *textEffect)`                     |
+| `NSObliquenessAttributeName`        | `obliqueness(CGFloat obliqueness)`                     |
+| `NSExpansionAttributeName`          | `expansion(CGFloat expansion)`                         |
 | `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
 |                                     | `textAlignment(NSTextAlignment textAlignment)`         |
 |                                     | `lineSpacing(CGFloat lineSpacing)`                     |

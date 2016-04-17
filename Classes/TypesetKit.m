@@ -157,22 +157,11 @@
     };
 }
 
-- (TypesetBaselineBlock)baseline {
+- (TypesetCGFloatBlock)baseline {
     return ^(CGFloat baseline) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSBaselineOffsetAttributeName value:@(baseline) range:range];
-        }
-        return self;
-    };
-}
-
-- (TypesetCGFloatBlock)baselineOffset {
-    return ^(CGFloat baselineOffset) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-
-            [self.string addAttribute:NSBaselineOffsetAttributeName value:@(baselineOffset) range:range];
         }
         return self;
     };

@@ -31,7 +31,7 @@
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentLeft;
 
-    label.typesetBlock = TSBlock(fontSize(30).light.kern(3).matchAll(@"in").red.matchAll(@"et").blue);
+    label.typesetBlock = TSBlock(fontSize(30).light.kern(3).matchAll(@"in").red.matchAll(@"et").blue.underline(NSUnderlineStyleThick));
 
 }
 
