@@ -478,6 +478,10 @@
     return NSParagraphStyleReturnBlock(NSWritingDirection, baseWritingDirection);
 }
 
+- (TypesetBlock(BOOL))allowsDefaultTighteningForTruncation {
+    return NSParagraphStyleReturnBlock(BOOL, allowsDefaultTighteningForTruncation);
+}
+
 - (NSMutableParagraphStyle *)paragraphStyle {
     if (!_paragraphStyle) {
         _paragraphStyle = [[NSMutableParagraphStyle alloc] init];

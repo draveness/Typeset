@@ -92,5 +92,6 @@
 - (TypesetCGFloatBlock)hyphenationFactor;
 - (TypesetCGFloatBlock)defaultTabInterval;
 - (TypesetBlock(NSWritingDirection))baseWritingDirection;
+- (TypesetBlock(BOOL))allowsDefaultTighteningForTruncation;
 
 @end
