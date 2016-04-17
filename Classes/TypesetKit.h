@@ -77,9 +77,12 @@ typedef TypesetKit *(^TypesettingShadowBlock)(NSShadow *);
 - (TypesettingCGFloatBlock)kern;
 
 - (TypesettingColorBlock)strokeColor;
+
 - (TypesettingCGFloatBlock)strokeWidth;
 
 - (TypesettingShadowBlock)shadow;
+
+- (TypesettingStringBlock)textEffect;
 
 // NSMutableParagraphStyle
 - (TypesettingIntegerBlock)lineBreakMode;

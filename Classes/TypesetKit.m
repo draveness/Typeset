@@ -346,6 +346,17 @@
     };
 }
 
+- (TypesettingStringBlock)textEffect {
+    return ^(NSString *textEffect) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+
+            [self.string addAttribute:NSTextEffectAttributeName value:textEffect range:range];
+        }
+        return self;
+    };
+}
+
 #pragma mark - NSParagraphStyle
 
 - (TypesettingIntegerBlock)lineBreakMode {
