@@ -79,8 +79,18 @@
 
 // NSMutableParagraphStyle
 - (TypesetBlock(NSLineBreakMode))lineBreakMode;
+- (TypesetBlock(NSTextAlignment))alignment;
 - (TypesetBlock(NSTextAlignment))textAlignment;
 - (TypesetCGFloatBlock)lineSpacing;
-
+- (TypesetCGFloatBlock)paragraphSpacing;
+- (TypesetCGFloatBlock)headIndent;
+- (TypesetCGFloatBlock)tailIndent;
+- (TypesetCGFloatBlock)minimumLineHeight;
+- (TypesetCGFloatBlock)maximumLineHeight;
+- (TypesetCGFloatBlock)lineHeightMultiple;
+- (TypesetCGFloatBlock)paragraphSpacingBefore;
+- (TypesetCGFloatBlock)hyphenationFactor;
+- (TypesetCGFloatBlock)defaultTabInterval;
+- (TypesetBlock(NSWritingDirection))baseWritingDirection;
 
 @end

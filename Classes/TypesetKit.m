@@ -411,40 +411,71 @@
 
 #pragma mark - NSParagraphStyle
 
+#define NSParagraphStyleReturnBlock(type, attribute) \
+    ^(type attribute) { \
+        for (NSValue *value in self.attributeRanges) { \
+            NSRange range = [value rangeValue]; \
+        \
+            self.paragraphStyle.attribute = attribute; \
+            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range]; \
+        } \
+        return self; \
+    }
+
 - (TypesetBlock(NSLineBreakMode))lineBreakMode {
-    return ^(NSLineBreakMode lineBreakMode) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-            
-            self.paragraphStyle.lineBreakMode = lineBreakMode;
-            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range];
-        }
-        return self;
-    };
+    return NSParagraphStyleReturnBlock(NSLineBreakMode, lineBreakMode);
+}
+
+- (TypesetBlock(NSTextAlignment))alignment {
+    return NSParagraphStyleReturnBlock(NSTextAlignment, alignment);
 }
 
 - (TypesetBlock(NSTextAlignment))textAlignment {
-    return ^(NSTextAlignment textAlignment) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-            
-            self.paragraphStyle.alignment = textAlignment;
-            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range];
-        }
-        return self;
-    };
+    return self.alignment;
 }
 
 - (TypesetCGFloatBlock)lineSpacing {
-    return ^(CGFloat lineSpacing) {
-        for (NSValue *value in self.attributeRanges) {
-            NSRange range = [value rangeValue];
-            
-            self.paragraphStyle.lineSpacing = lineSpacing;
-            [self.string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:range];
-        }
-        return self;
-    };
+    return NSParagraphStyleReturnBlock(CGFloat, lineSpacing);
+}
+
+- (TypesetCGFloatBlock)paragraphSpacing {
+    return NSParagraphStyleReturnBlock(CGFloat, paragraphSpacing);
+}
+
+- (TypesetCGFloatBlock)headIndent {
+    return NSParagraphStyleReturnBlock(CGFloat, headIndent);
+}
+
+- (TypesetCGFloatBlock)tailIndent {
+    return NSParagraphStyleReturnBlock(CGFloat, tailIndent);
+}
+
+- (TypesetCGFloatBlock)minimumLineHeight {
+    return NSParagraphStyleReturnBlock(CGFloat, minimumLineHeight);
+}
+
+- (TypesetCGFloatBlock)maximumLineHeight {
+    return NSParagraphStyleReturnBlock(CGFloat, maximumLineHeight);
+}
+
+- (TypesetCGFloatBlock)lineHeightMultiple {
+    return NSParagraphStyleReturnBlock(CGFloat, lineHeightMultiple);
+}
+
+- (TypesetCGFloatBlock)paragraphSpacingBefore {
+    return NSParagraphStyleReturnBlock(CGFloat, paragraphSpacingBefore);
+}
+
+- (TypesetCGFloatBlock)hyphenationFactor {
+    return NSParagraphStyleReturnBlock(CGFloat, hyphenationFactor);
+}
+
+- (TypesetCGFloatBlock)defaultTabInterval {
+    return NSParagraphStyleReturnBlock(CGFloat, defaultTabInterval);
+}
+
+- (TypesetBlock(NSWritingDirection))baseWritingDirection {
+    return NSParagraphStyleReturnBlock(NSWritingDirection, baseWritingDirection);
 }
 
 - (NSMutableParagraphStyle *)paragraphStyle {

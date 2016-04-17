@@ -109,7 +109,7 @@ Typeset makes it easy to create `NSAttributedString`
 | `NSObliquenessAttributeName`        | `obliqueness(CGFloat obliqueness)`                     |
 | `NSExpansionAttributeName`          | `expansion(CGFloat expansion)`                         |
 | `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
-|                                     | `textAlignment(NSTextAlignment textAlignment)`         |
+|                                     | `alignment(NSTextAlignment textAlignment)`             |
 |                                     | `lineSpacing(CGFloat lineSpacing)`                     |
 
 ## Installation 
