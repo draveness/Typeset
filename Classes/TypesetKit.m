@@ -43,7 +43,7 @@
 
 }
 
-- (TypesettingIntegerBlock)from {
+- (TypesetUIntegerBlock)from {
     return ^(NSUInteger from) {
         if (self.attributeTo != -1) {
             [self removeAllAttributeRanges];
@@ -54,7 +54,7 @@
     };
 }
 
-- (TypesettingIntegerBlock)to {
+- (TypesetUIntegerBlock)to {
     return ^(NSUInteger to) {
         if (self.attributeFrom != -1) {
             [self removeAllAttributeRanges];
@@ -65,7 +65,7 @@
     };
 }
 
-- (TypesettingIntegerBlock)location {
+- (TypesetUIntegerBlock)location {
     return ^(NSUInteger location) {
         if (self.attributeLength != -1) {
             [self removeAllAttributeRanges];
@@ -76,7 +76,7 @@
     };
 }
 
-- (TypesettingIntegerBlock)length {
+- (TypesetUIntegerBlock)length {
     return ^(NSUInteger length) {
         if (self.attributeLocation != -1) {
             [self removeAllAttributeRanges];
@@ -87,7 +87,7 @@
     };
 }
 
-- (TypesettingRangeBlock)range {
+- (TypesetRangeBlock)range {
     return ^(NSRange range) {
         [self removeAllAttributeRanges];
         [self.attributeRanges addObject:[NSValue valueWithRange:range]];
@@ -95,13 +95,13 @@
     };
 }
 
-- (TypesettingStringBlock)matchAll {
+- (TypesetStringBlock)matchAll {
     return ^(NSString *substring) {
         return self.matchAllWithOptions(substring, 0);
     };
 }
 
-- (TypesettingMatchBlock)matchAllWithOptions {
+- (TypesetMatchBlock)matchAllWithOptions {
     return ^(NSString *substring, NSStringCompareOptions options) {
         NSRange range = [self.string.string rangeOfString:substring options:options];
         [self removeAllAttributeRanges];
@@ -116,13 +116,13 @@
     };
 }
 
-- (TypesettingStringBlock)match {
+- (TypesetStringBlock)match {
     return ^(NSString *substring) {
         return self.matchWithOptions(substring,0);
     };
 }
 
-- (TypesettingMatchBlock)matchWithOptions {
+- (TypesetMatchBlock)matchWithOptions {
     return ^(NSString *substring, NSStringCompareOptions options) {
         NSRange range = [self.string.string rangeOfString:substring options:options];
         [self removeAllAttributeRanges];
@@ -137,7 +137,7 @@
     return self;
 }
 
-- (TypesettingColorBlock)color {
+- (TypesetColorBlock)color {
     return ^(UIColor *color) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -147,7 +147,7 @@
     };
 }
 
-- (TypesettingIntegerBlock)hexColor {
+- (TypesetUIntegerBlock)hexColor {
     return ^(NSUInteger hexColor) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -157,7 +157,7 @@
     };
 }
 
-- (TypesettingBaselineBlock)baseline {
+- (TypesetBaselineBlock)baseline {
     return ^(CGFloat baseline) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -167,7 +167,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)baselineOffset {
+- (TypesetCGFloatBlock)baselineOffset {
     return ^(CGFloat baselineOffset) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -178,8 +178,8 @@
     };
 }
 
-- (TypesettingStrikeThroughBlock)strikeThrough {
-    return ^(TSStrikeThrough strikeThroughStyle) {
+- (TypesetBlock(NSUnderlineStyle))strikeThrough {
+    return ^(NSUnderlineStyle strikeThroughStyle) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSStrikethroughStyleAttributeName value:@(strikeThroughStyle) range:range];
@@ -188,7 +188,7 @@
     };
 }
 
-- (TypesettingColorBlock)strikeThroughColor {
+- (TypesetColorBlock)strikeThroughColor {
     return ^(UIColor *strikeThroughColor) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -198,7 +198,7 @@
     };
 }
 
-- (TypesettingFontBlock)font {
+- (TypesetFontBlock)font {
     return ^(NSString *fontName, CGFloat fontSize) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -210,7 +210,7 @@
     };
 }
 
-- (TypesettingStringBlock)fontName {
+- (TypesetStringBlock)fontName {
     return ^(NSString *fontName) {
         if (self.string.length) {
             for (NSValue *value in self.attributeRanges) {
@@ -263,7 +263,7 @@
     return [self changeFontWeight:TSFontWeightThin];
 }
 
-- (TypesettingCGFloatBlock)fontSize {
+- (TypesetCGFloatBlock)fontSize {
     return ^(CGFloat fontSize) {
         if (self.string.length) {
             for (NSValue *value in self.attributeRanges) {
@@ -282,8 +282,8 @@
     };
 }
 
-- (TypesettingIntegerBlock)underline {
-    return ^(NSUInteger underline) {
+- (TypesetBlock(NSUnderlineStyle))underline {
+    return ^(NSUnderlineStyle underline) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:underline] range:range];
@@ -292,7 +292,7 @@
     };
 }
 
-- (TypesettingColorBlock)underlineColor {
+- (TypesetColorBlock)underlineColor {
     return ^(UIColor *underlineColor) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -302,7 +302,7 @@
     };
 }
 
-- (TypesettingStringBlock)link {
+- (TypesetStringBlock)link {
     return ^(NSString *url) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -312,7 +312,7 @@
     };
 }
 
-- (TypesettingStringBlock)append {
+- (TypesetStringBlock)append {
     return ^(NSString *string) {
         NSMutableAttributedString *mas = [self.string mutableCopy];
         [mas appendAttributedString:[[NSAttributedString alloc] initWithString:string]];
@@ -321,7 +321,7 @@
     };
 }
 
-- (TypesettingIntegerBlock)ligature {
+- (TypesetUIntegerBlock)ligature {
     return ^(NSUInteger ligature) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -331,7 +331,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)kern {
+- (TypesetCGFloatBlock)kern {
     return ^(CGFloat kern) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -343,7 +343,7 @@
 }
 
 
-- (TypesettingColorBlock)strokeColor {
+- (TypesetColorBlock)strokeColor {
     return ^(UIColor *strokeColor) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -354,7 +354,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)strokeWidth {
+- (TypesetCGFloatBlock)strokeWidth {
     return ^(CGFloat strokeWidth) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -365,7 +365,7 @@
     };
 }
 
-- (TypesettingShadowBlock)shadow {
+- (TypesetShadowBlock)shadow {
     return ^(NSShadow *shadow) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -376,7 +376,7 @@
     };
 }
 
-- (TypesettingStringBlock)textEffect {
+- (TypesetStringBlock)textEffect {
     return ^(NSString *textEffect) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -387,7 +387,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)obliqueness {
+- (TypesetCGFloatBlock)obliqueness {
     return ^(CGFloat obliqueness) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -398,7 +398,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)expansion {
+- (TypesetCGFloatBlock)expansion {
     return ^(CGFloat expansion) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
@@ -411,8 +411,8 @@
 
 #pragma mark - NSParagraphStyle
 
-- (TypesettingIntegerBlock)lineBreakMode {
-    return ^(NSUInteger lineBreakMode) {
+- (TypesetBlock(NSLineBreakMode))lineBreakMode {
+    return ^(NSLineBreakMode lineBreakMode) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             
@@ -423,8 +423,8 @@
     };
 }
 
-- (TypesettingIntegerBlock)textAlignment {
-    return ^(NSUInteger textAlignment) {
+- (TypesetBlock(NSTextAlignment))textAlignment {
+    return ^(NSTextAlignment textAlignment) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             
@@ -435,7 +435,7 @@
     };
 }
 
-- (TypesettingCGFloatBlock)lineSpacing {
+- (TypesetCGFloatBlock)lineSpacing {
     return ^(CGFloat lineSpacing) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];

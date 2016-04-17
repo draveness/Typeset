@@ -8,95 +8,83 @@
 
 #import <UIKit/UIKit.h>
 
+#define TypesetBlock(...) TypesetKit *(^)(__VA_ARGS__)
+
+#define TypesetUIntegerBlock TypesetBlock(NSUInteger)
+#define TypesetIntegerBlock TypesetBlock(NSInteger)
+#define TypesetCGFloatBlock TypesetBlock(CGFloat)
+#define TypesetRangeBlock TypesetBlock(NSRange)
+#define TypesetStringBlock TypesetBlock(NSString *)
+#define TypesetColorBlock TypesetBlock(UIColor *)
+#define TypesetBaselineBlock TypesetBlock(CGFloat)
+#define TypesetStrikeThroughBlock TypesetBlock(TSStrikeThrough)
+#define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
+#define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
+#define TypesetShadowBlock TypesetBlock(NSShadow *)
+
+
 @interface TypesetKit : NSObject
-
-typedef NS_ENUM(NSInteger, TSUnderline) {
-    TSUnderlineNoUnder = NSUnderlineStyleNone,
-    TSUnderlineSingle = NSUnderlineStyleSingle,
-    TSUnderlineThick = NSUnderlineStyleThick,
-    TSUnderlineDouble = NSUnderlineStyleDouble,
-    TSUnderlinePatternSolid = NSUnderlinePatternSolid,
-    TSUnderlinePatternDot = NSUnderlinePatternDot,
-    TSUnderlinePatternDash = NSUnderlinePatternDash,
-    TSUnderlinePatternDashDot = NSUnderlinePatternDashDot,
-    TSUnderlinePatternDotDot = NSUnderlinePatternDashDotDot,
-    TSUnderlineByWord = NSUnderlineByWord
-};
-
-// TSStrikeThrough is just a copy of TSUnderline
-typedef TSUnderline TSStrikeThrough;
-
-typedef TypesetKit *(^TypesettingIntegerBlock)(NSUInteger);
-typedef TypesetKit *(^TypesettingCGFloatBlock)(CGFloat);
-typedef TypesetKit *(^TypesettingRangeBlock)(NSRange);
-typedef TypesetKit *(^TypesettingStringBlock)(NSString *);
-typedef TypesetKit *(^TypesettingColorBlock)(UIColor *);
-typedef TypesetKit *(^TypesettingBaselineBlock)(CGFloat);
-typedef TypesetKit *(^TypesettingStrikeThroughBlock)(TSStrikeThrough);
-typedef TypesetKit *(^TypesettingFontBlock)(NSString *, CGFloat);
-typedef TypesetKit *(^TypesettingMatchBlock)(NSString *, NSStringCompareOptions);
-typedef TypesetKit *(^TypesettingShadowBlock)(NSShadow *);
 
 @property (nonatomic, strong) NSMutableAttributedString *string;
 
-- (TypesettingIntegerBlock)from;
-- (TypesettingIntegerBlock)to;
-- (TypesettingIntegerBlock)location;
-- (TypesettingIntegerBlock)length;
-- (TypesettingRangeBlock)range;
-- (TypesettingStringBlock)match;
-- (TypesettingMatchBlock)matchWithOptions;
-- (TypesettingStringBlock)matchAll;
-- (TypesettingMatchBlock)matchAllWithOptions;
+- (TypesetUIntegerBlock)from;
+- (TypesetUIntegerBlock)to;
+- (TypesetUIntegerBlock)location;
+- (TypesetUIntegerBlock)length;
+- (TypesetRangeBlock)range;
+- (TypesetStringBlock)match;
+- (TypesetMatchBlock)matchWithOptions;
+- (TypesetStringBlock)matchAll;
+- (TypesetMatchBlock)matchAllWithOptions;
 - (TypesetKit *)all;
 
-- (TypesettingColorBlock)color;
-- (TypesettingIntegerBlock)hexColor;
+- (TypesetColorBlock)color;
+- (TypesetUIntegerBlock)hexColor;
 
-- (TypesettingStringBlock)fontName;
-- (TypesettingCGFloatBlock)fontSize;
-- (TypesettingFontBlock)font;
+- (TypesetStringBlock)fontName;
+- (TypesetCGFloatBlock)fontSize;
+- (TypesetFontBlock)font;
 - (TypesetKit *)regular;
 - (TypesetKit *)light;
 - (TypesetKit *)bold;
 - (TypesetKit *)italic;
 - (TypesetKit *)thin;
 
-- (TypesettingStrikeThroughBlock)strikeThrough;
+- (TypesetBlock(NSUnderlineStyle))strikeThrough;
 
-- (TypesettingColorBlock)strikeThroughColor;
+- (TypesetColorBlock)strikeThroughColor;
 
-- (TypesettingBaselineBlock)baseline;
+- (TypesetBaselineBlock)baseline;
 
-- (TypesettingCGFloatBlock)baselineOffset;
+- (TypesetCGFloatBlock)baselineOffset;
 
-- (TypesettingIntegerBlock)underline;
+- (TypesetBlock(NSUnderlineStyle))underline;
 
-- (TypesettingColorBlock)underlineColor;
+- (TypesetColorBlock)underlineColor;
 
-- (TypesettingStringBlock)link;
+- (TypesetStringBlock)link;
 
-- (TypesettingStringBlock)append;
+- (TypesetStringBlock)append;
 
-- (TypesettingIntegerBlock)ligature;
+- (TypesetUIntegerBlock)ligature;
 
-- (TypesettingCGFloatBlock)kern;
+- (TypesetCGFloatBlock)kern;
 
-- (TypesettingColorBlock)strokeColor;
+- (TypesetColorBlock)strokeColor;
 
-- (TypesettingCGFloatBlock)strokeWidth;
+- (TypesetCGFloatBlock)strokeWidth;
 
-- (TypesettingShadowBlock)shadow;
+- (TypesetShadowBlock)shadow;
 
-- (TypesettingStringBlock)textEffect;
+- (TypesetStringBlock)textEffect;
 
-- (TypesettingCGFloatBlock)obliqueness;
+- (TypesetCGFloatBlock)obliqueness;
 
-- (TypesettingCGFloatBlock)expansion;
+- (TypesetCGFloatBlock)expansion;
 
 // NSMutableParagraphStyle
-- (TypesettingIntegerBlock)lineBreakMode;
-- (TypesettingIntegerBlock)textAlignment;
-- (TypesettingCGFloatBlock)lineSpacing;
+- (TypesetBlock(NSLineBreakMode))lineBreakMode;
+- (TypesetBlock(NSTextAlignment))textAlignment;
+- (TypesetCGFloatBlock)lineSpacing;
 
 @end
