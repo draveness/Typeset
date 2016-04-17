@@ -7,9 +7,6 @@
 
 ----
 
-![](./images/Typeset.gif)
-
-
 Typeset makes it easy to create `NSAttributedString`
 
 ```
@@ -19,6 +16,13 @@ Typeset makes it easy to create `NSAttributedString`
    .match(@"set").blue
    .string;
 ```
+
+# Demo
+
+<p align="center">
+![](./images/Typeset.gif)
+<p align="center">
+
 
 # Usage
 
