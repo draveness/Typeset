@@ -142,7 +142,7 @@
     };
 }
 
-- (TypesetKit *)matchNumbes {
+- (TypesetKit *)matchNumbers {
     return [self matchAllWithPattern:@"\\d+" options:0];
 }
 
