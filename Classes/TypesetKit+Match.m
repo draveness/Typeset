@@ -142,15 +142,15 @@
     };
 }
 
-- (TypesetKit *)number {
+- (TypesetKit *)matchNumber {
     return [self matchWithPattern:@"\\d+" options:0];
 }
 
-- (TypesetKit *)numbers {
+- (TypesetKit *)matchNumbes {
     return [self matchAllWithPattern:@"\\d+" options:0];
 }
 
-- (TypesetKit *)letters {
+- (TypesetKit *)matchLetters {
     return [self matchAllWithPattern:@"[a-zA-Z]+" options:0];
 }
 
