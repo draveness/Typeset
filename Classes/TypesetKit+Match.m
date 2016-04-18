@@ -142,12 +142,16 @@
     };
 }
 
-- (TypesetKit *)matchNumber {
+- (TypesetKit *)number {
     return [self matchWithPattern:@"\\d+" options:0];
 }
 
-- (TypesetKit *)matchAllNumbers {
+- (TypesetKit *)numbers {
     return [self matchAllWithPattern:@"\\d+" options:0];
+}
+
+- (TypesetKit *)letters {
+    return [self matchAllWithPattern:@"[a-zA-Z]+" options:0];
 }
 
 - (TypesetKit *)matchWithPattern:(NSString *)pattern options:(NSRegularExpressionOptions)options {

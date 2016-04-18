@@ -23,7 +23,9 @@
 - (TypesetStringBlock)matchAllWithPattern;
 - (TypesetBlock(NSString *, NSRegularExpressionOptions))matchAllWithPatternAndOptions;
 
-- (TypesetKit *)matchAllNumbers;
+- (TypesetKit *)number;
+- (TypesetKit *)numbers;
+- (TypesetKit *)letters;
 
 - (TypesetKit *)all;
 

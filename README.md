@@ -39,14 +39,17 @@ Typeset makes it easy to create `NSAttributedString`
 		
 	> call `typeset` method first and call `string` at last returns a `NSAttributedString`.
 		
-+ UILabel support
-	+ Add `typesetBlock` to UILabel, and you can directly set it's text style with:
++ `UILabel` and `UITextField` support
+	+ Add `typesetBlock` to UILabel or `UITextField`, and you can directly set it's text style with:
 
 	```objectivec
 	label.typesetBlock = TSBlock(fontSize(40)
 	                       .match(@"type").purple
 	                       .match(@"set").blue);
 	label.text = @"Hello typeset, hello.";
+
+    // If you type in this text field, it will color all the `1` in text field to red
+    textField.typesetBlock = TSBlock(match(@"1").red);
 	```
 	
 + Match part of string
