@@ -30,6 +30,8 @@
     self.paragraphStyle = nil;
 }
 
+#pragma mark - Range Construct
+
 - (TypesetUIntegerBlock)from {
     return ^(NSUInteger from) {
         if (self.attributeTo != -1) {
@@ -82,6 +84,8 @@
     };
 }
 
+#pragma mark - Match String
+
 - (TypesetStringBlock)matchAll {
     return ^(NSString *substring) {
         return self.matchAllWithOptions(substring, 0);
@@ -118,6 +122,14 @@
     };
 }
 
+- (TypesetKit *)all {
+    [self removeAllAttributeRanges];
+    [self.attributeRanges addObject:[NSValue valueWithLocation:0 length:self.string.length]];
+    return self;
+}
+
+#pragma mark - MatchWithPattern
+
 - (TypesetBlock(NSString *, NSRegularExpressionOptions))matchAllWithPatternAndOptions {
     return ^(NSString *pattern, NSRegularExpressionOptions options) {
         return [self matchAllWithPattern:pattern options:options];
@@ -137,13 +149,6 @@
 - (TypesetKit *)matchAllNumbers {
     return [self matchAllWithPattern:@"\\d+" options:0];
 }
-
-- (TypesetKit *)all {
-    [self removeAllAttributeRanges];
-    [self.attributeRanges addObject:[NSValue valueWithLocation:0 length:self.string.length]];
-    return self;
-}
-
 
 - (TypesetKit *)matchWithPattern:(NSString *)pattern options:(NSRegularExpressionOptions)options {
     NSError *regError;
