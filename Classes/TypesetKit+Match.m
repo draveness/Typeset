@@ -150,6 +150,18 @@
     return [self matchAllWithPattern:@"[a-zA-Z]+" options:0];
 }
 
+- (TypesetStringBlock)matchLanguage {
+    return ^(NSString *language) {
+        return [self matchAllWithPattern:[NSString stringWithFormat:@"\\p{script=%@}", language] options:0];
+    };
+}
+
+- (TypesetKit *)matchChinese {
+    return self.matchLanguage(@"Han");
+}
+
+#pragma mark - Helper
+
 - (TypesetKit *)matchWithPattern:(NSString *)pattern options:(NSRegularExpressionOptions)options {
     NSError *regError;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern

@@ -25,6 +25,8 @@
 
 - (TypesetKit *)matchNumbers;
 - (TypesetKit *)matchLetters;
+- (TypesetStringBlock)matchLanguage;
+- (TypesetKit *)matchChinese;
 
 - (TypesetKit *)all;
 
