@@ -19,6 +19,12 @@
 - (TypesetMatchBlock)matchWithOptions;
 - (TypesetStringBlock)matchAll;
 - (TypesetMatchBlock)matchAllWithOptions;
+
+- (TypesetStringBlock)matchAllWithPattern;
+- (TypesetBlock(NSString *, NSRegularExpressionOptions))matchAllWithPatternAndOptions;
+
+- (TypesetKit *)matchAllNumbers;
+
 - (TypesetKit *)all;
 
 @end

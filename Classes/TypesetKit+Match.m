@@ -105,7 +105,7 @@
 
 - (TypesetStringBlock)match {
     return ^(NSString *substring) {
-        return self.matchWithOptions(substring,0);
+        return self.matchWithOptions(substring, 0);
     };
 }
 
@@ -118,9 +118,62 @@
     };
 }
 
+- (TypesetBlock(NSString *, NSRegularExpressionOptions))matchAllWithPatternAndOptions {
+    return ^(NSString *pattern, NSRegularExpressionOptions options) {
+        return [self matchAllWithPattern:pattern options:options];
+    };
+}
+
+- (TypesetStringBlock)matchAllWithPattern {
+    return ^(NSString *pattern) {
+        return [self matchAllWithPattern:pattern options:0];
+    };
+}
+
+- (TypesetKit *)matchNumber {
+    return [self matchWithPattern:@"\\d+" options:0];
+}
+
+- (TypesetKit *)matchAllNumbers {
+    return [self matchAllWithPattern:@"\\d+" options:0];
+}
+
 - (TypesetKit *)all {
     [self removeAllAttributeRanges];
     [self.attributeRanges addObject:[NSValue valueWithLocation:0 length:self.string.length]];
+    return self;
+}
+
+
+- (TypesetKit *)matchWithPattern:(NSString *)pattern options:(NSRegularExpressionOptions)options {
+    NSError *regError;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:options
+                                                                             error:&regError];
+    if (regError) NSLog(@"%@",regError.localizedDescription);
+
+    [self removeAllAttributeRanges];
+    NSRange range = NSMakeRange(0, self.string.string.length);
+    NSRange resultRange = [regex rangeOfFirstMatchInString:self.string.string
+                                                   options:0 range:range];
+    [self.attributeRanges addObject:[NSValue valueWithRange:resultRange]];
+    return self;
+}
+
+- (TypesetKit *)matchAllWithPattern:(NSString *)pattern options:(NSRegularExpressionOptions)options {
+    NSError *regError;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:options
+                                                                             error:&regError];
+    if (regError) NSLog(@"%@",regError.localizedDescription);
+
+    [self removeAllAttributeRanges];
+    NSRange range = NSMakeRange(0, self.string.string.length);
+    [regex enumerateMatchesInString:self.string.string
+                            options:0 range:range
+                         usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                             [self.attributeRanges addObject:[NSValue valueWithRange:result.range]];
+                         }];
     return self;
 }
 
