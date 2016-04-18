@@ -74,8 +74,7 @@ Typeset makes it easy to create `NSAttributedString`
 	| `matchAll(NSString)`                                   | match all the substring                                |
     | `matchAllWithOptions(NSString *, NSStringCompareOptions)`| match all the substring with options                 |
     | `all`                                                  | select all the string                                  |
-    | `matchNumber`                                          | match first string with regex \d+                      |
-    | `matchNumbers`                                         | match all string with regex \d+                        |
+    | `matchNumber`                                          | match all string with regex \d+                        |
 
 + Convinient method
 	+ If you don't want to change some part of the string, and only want to **change the color or the font**, you call call these methods directly without calling `typeset` first
