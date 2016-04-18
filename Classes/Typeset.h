@@ -11,6 +11,7 @@
 
 #import "TypesetKit.h"
 #import "TypesetKit+Color.h"
+#import "TypesetKit+Match.h"
 #import "NSString+Typeset.h"
 #import "NSMutableAttributedString+Typeset.h"
 

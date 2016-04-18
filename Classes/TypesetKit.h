@@ -24,17 +24,6 @@
 
 @property (nonatomic, strong) NSMutableAttributedString *string;
 
-- (TypesetUIntegerBlock)from;
-- (TypesetUIntegerBlock)to;
-- (TypesetUIntegerBlock)location;
-- (TypesetUIntegerBlock)length;
-- (TypesetRangeBlock)range;
-- (TypesetStringBlock)match;
-- (TypesetMatchBlock)matchWithOptions;
-- (TypesetStringBlock)matchAll;
-- (TypesetMatchBlock)matchAllWithOptions;
-- (TypesetKit *)all;
-
 - (TypesetColorBlock)color;
 - (TypesetUIntegerBlock)hexColor;
 

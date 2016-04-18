@@ -34,6 +34,8 @@
 		724DBF1B1CC14433008C2C50 /* UILabel+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		724DBF1C1CC14433008C2C50 /* UITextField+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7258DF001CB3618200C8762B /* UITextField+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */; };
+		72B0B9701CC48770000E7EDA /* TypesetKit+Match.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B0B96E1CC48770000E7EDA /* TypesetKit+Match.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72B0B9711CC48770000E7EDA /* TypesetKit+Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B0B96F1CC48770000E7EDA /* TypesetKit+Match.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		7219A7561CACDAD000D53165 /* UIFont+Weight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Weight.m"; sourceTree = "<group>"; };
 		7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Typeset.h"; sourceTree = "<group>"; };
 		7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Typeset.m"; sourceTree = "<group>"; };
+		72B0B96E1CC48770000E7EDA /* TypesetKit+Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TypesetKit+Match.h"; sourceTree = "<group>"; };
+		72B0B96F1CC48770000E7EDA /* TypesetKit+Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TypesetKit+Match.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 			children = (
 				183D50A01B13F8200041B180 /* TypesetKit.h */,
 				183D50A11B13F8200041B180 /* TypesetKit.m */,
+				72B0B96E1CC48770000E7EDA /* TypesetKit+Match.h */,
+				72B0B96F1CC48770000E7EDA /* TypesetKit+Match.m */,
 				183D509E1B13F8200041B180 /* TypesetKit+Color.h */,
 				183D509F1B13F8200041B180 /* TypesetKit+Color.m */,
 				183D509B1B13F8200041B180 /* NSString+Typeset.h */,
@@ -224,6 +230,7 @@
 				724DBF141CC14433008C2C50 /* Typeset.h in Headers */,
 				724DBF1B1CC14433008C2C50 /* UILabel+Typeset.h in Headers */,
 				724DBF161CC14433008C2C50 /* TypesetKit+Color.h in Headers */,
+				72B0B9701CC48770000E7EDA /* TypesetKit+Match.h in Headers */,
 				724DBF1C1CC14433008C2C50 /* UITextField+Typeset.h in Headers */,
 				724DBF191CC14433008C2C50 /* NSValue+Range.h in Headers */,
 				724DBF1A1CC14433008C2C50 /* UIFont+Weight.h in Headers */,
@@ -338,6 +345,7 @@
 				7219A7571CACDAD000D53165 /* UIFont+Weight.m in Sources */,
 				7219A7531CACD79F00D53165 /* README.md in Sources */,
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
+				72B0B9711CC48770000E7EDA /* TypesetKit+Match.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
 				183D50A31B13F8200041B180 /* TypesetKit+Color.m in Sources */,
 				7219A74B1CACCC0B00D53165 /* UILabel+Typeset.m in Sources */,
