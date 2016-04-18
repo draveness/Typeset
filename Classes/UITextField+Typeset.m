@@ -58,7 +58,6 @@
     // Call textFieldDidChange: method when text changed
     [self addTarget:self
              action:@selector(textFieldDidChange:)
-
    forControlEvents:UIControlEventEditingChanged];
     objc_setAssociatedObject(self, @selector(typesetBlock), [typesetBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
