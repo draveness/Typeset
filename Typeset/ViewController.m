@@ -33,7 +33,7 @@
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentLeft;
 
-    label.typesetBlock = TSBlock(numbers.red.letters.blue);
+    label.typesetBlock = TSBlock(matchNumbers.red.matchLetters.blue);
 
 }
 
