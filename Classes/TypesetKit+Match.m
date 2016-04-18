@@ -142,10 +142,6 @@
     };
 }
 
-- (TypesetKit *)matchNumber {
-    return [self matchWithPattern:@"\\d+" options:0];
-}
-
 - (TypesetKit *)matchNumbes {
     return [self matchAllWithPattern:@"\\d+" options:0];
 }
