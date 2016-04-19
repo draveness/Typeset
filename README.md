@@ -122,6 +122,11 @@ Typeset makes it easy to create `NSAttributedString`
 | `NSTextEffectAttributeName`         | `textEffect(NSString *textEffect)`                     |
 | `NSObliquenessAttributeName`        | `obliqueness(CGFloat obliqueness)`                     |
 | `NSExpansionAttributeName`          | `expansion(CGFloat expansion)`                         |
+
+### NSParagraphStyle
+
+| ParagraphStyle AttributeName        | `Typeset` Method                                       |
+| ----------------------------------- | ------------------------------------------------------ |
 | `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
 |                                     | `alignment(NSTextAlignment textAlignment)`             |
 |                                     | `lineSpacing(CGFloat lineSpacing)`                     |
