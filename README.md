@@ -125,23 +125,23 @@ Typeset makes it easy to create `NSAttributedString`
 
 ### NSParagraphStyle
 
-| ParagraphStyle AttributeName        | `Typeset` Method                                       |
-| ----------------------------------- | ------------------------------------------------------ |
-| `NSParagraphStyleAttributeName`     | `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
-|                                     | `alignment(NSTextAlignment textAlignment)`             |
-|                                     | `lineSpacing(CGFloat lineSpacing)`                     |
-|                                     | `paragraphSpacing(CGFloat paragraphSpacing)`           |
-|                                     | `firstLineHeadIndent(CGFloat firstLineHeadIndent)`     |
-|                                     | `headIndent(CGFloat headIndent)`                       |
-|                                     | `tailIndent(CGFloat tailIndent)`                       |
-|                                     | `minimumLineHeight(CGFloat minimumLineHeight)`         |
-|                                     | `maximumLineHeight(CGFloat maximumLineHeight)`         |
-|                                     | `lineHeightMultiple(CGFloat lineHeightMultiple)`       |
-|                                     | `paragraphSpacingBefore(CGFloat paragraphSpacingBefore)` |
-|                                     | `hyphenationFactor(CGFloat hyphenationFactor)`         |
-|                                     | `defaultTabInterval(CGFloat defaultTabInterval)`       |
-|                                     | `baseWritingDirection(NSWritingDirection baseWritingDirection)`|
-|                                     | `allowsDefaultTighteningForTruncation(BOOL allowsDefaultTighteningForTruncation)`|
+| `Typeset` Method                                       |
+| ------------------------------------------------------ |
+| `lineBreakMode(NSLineBreakMode lineBreakMode)`         |
+| `alignment(NSTextAlignment textAlignment)`             |
+| `lineSpacing(CGFloat lineSpacing)`                     |
+| `paragraphSpacing(CGFloat paragraphSpacing)`           |
+| `firstLineHeadIndent(CGFloat firstLineHeadIndent)`     |
+| `headIndent(CGFloat headIndent)`                       |
+| `tailIndent(CGFloat tailIndent)`                       |
+| `minimumLineHeight(CGFloat minimumLineHeight)`         |
+| `maximumLineHeight(CGFloat maximumLineHeight)`         |
+| `lineHeightMultiple(CGFloat lineHeightMultiple)`       |
+| `paragraphSpacingBefore(CGFloat paragraphSpacingBefore)` |
+| `hyphenationFactor(CGFloat hyphenationFactor)`         |
+| `defaultTabInterval(CGFloat defaultTabInterval)`       |
+| `baseWritingDirection(NSWritingDirection baseWritingDirection)`|
+| `allowsDefaultTighteningForTruncation(BOOL allowsDefaultTighteningForTruncation)`|
 
 ## Installation 
 
