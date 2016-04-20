@@ -16,6 +16,7 @@
 - (TypesetUIntegerBlock)length;
 - (TypesetRangeBlock)range;
 - (TypesetStringBlock)match;
+- (TypesetStringBlock)matchLast;
 - (TypesetMatchBlock)matchWithOptions;
 - (TypesetStringBlock)matchAll;
 - (TypesetMatchBlock)matchAllWithOptions;
