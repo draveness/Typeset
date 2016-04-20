@@ -113,6 +113,12 @@
     };
 }
 
+- (TypesetStringBlock)matchLast {
+    return ^(NSString *substring) {
+        return self.matchWithOptions(substring, NSBackwardsSearch);
+    };
+}
+
 - (TypesetMatchBlock)matchWithOptions {
     return ^(NSString *substring, NSStringCompareOptions options) {
         NSRange range = [self.string.string rangeOfString:substring options:options];
