@@ -52,7 +52,7 @@
 }
 
 - (void)setTypesetBlock:(NSAttributedString *(^)(NSString *))typesetBlock {
-    if (self.text) self.attributedText = typesetBlock(self.text);
+    if (self.text && typesetBlock) self.attributedText = typesetBlock(self.text);
     objc_setAssociatedObject(self, @selector(typesetBlock), [typesetBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 

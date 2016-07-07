@@ -53,7 +53,7 @@
 }
 
 - (void)setTypesetBlock:(NSAttributedString *(^)(NSString *))typesetBlock {
-    if (self.text) self.attributedText = typesetBlock(self.text);
+    if (self.text && typesetBlock) self.attributedText = typesetBlock(self.text);
 
     // Call textFieldDidChange: method when text changed
     [self addTarget:self
