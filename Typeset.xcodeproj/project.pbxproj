@@ -34,6 +34,8 @@
 		724DBF1B1CC14433008C2C50 /* UILabel+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7219A7491CACCC0B00D53165 /* UILabel+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		724DBF1C1CC14433008C2C50 /* UITextField+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7258DF001CB3618200C8762B /* UITextField+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */; };
+		729F1A601D44B9BF00111F98 /* UITextView+Typeset.h in Headers */ = {isa = PBXBuildFile; fileRef = 729F1A5E1D44B9BF00111F98 /* UITextView+Typeset.h */; };
+		729F1A611D44B9BF00111F98 /* UITextView+Typeset.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F1A5F1D44B9BF00111F98 /* UITextView+Typeset.m */; };
 		72B0B9701CC48770000E7EDA /* TypesetKit+Match.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B0B96E1CC48770000E7EDA /* TypesetKit+Match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72B0B9711CC48770000E7EDA /* TypesetKit+Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B0B96F1CC48770000E7EDA /* TypesetKit+Match.m */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		7219A7561CACDAD000D53165 /* UIFont+Weight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Weight.m"; sourceTree = "<group>"; };
 		7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Typeset.h"; sourceTree = "<group>"; };
 		7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Typeset.m"; sourceTree = "<group>"; };
+		729F1A5E1D44B9BF00111F98 /* UITextView+Typeset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Typeset.h"; sourceTree = "<group>"; };
+		729F1A5F1D44B9BF00111F98 /* UITextView+Typeset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Typeset.m"; sourceTree = "<group>"; };
 		72B0B96E1CC48770000E7EDA /* TypesetKit+Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TypesetKit+Match.h"; sourceTree = "<group>"; };
 		72B0B96F1CC48770000E7EDA /* TypesetKit+Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TypesetKit+Match.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +189,8 @@
 				7219A74A1CACCC0B00D53165 /* UILabel+Typeset.m */,
 				7258DEFE1CB3618200C8762B /* UITextField+Typeset.h */,
 				7258DEFF1CB3618200C8762B /* UITextField+Typeset.m */,
+				729F1A5E1D44B9BF00111F98 /* UITextView+Typeset.h */,
+				729F1A5F1D44B9BF00111F98 /* UITextView+Typeset.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				724DBF151CC14433008C2C50 /* TypesetKit.h in Headers */,
+				729F1A601D44B9BF00111F98 /* UITextView+Typeset.h in Headers */,
 				724DBF181CC14433008C2C50 /* NSMutableAttributedString+Typeset.h in Headers */,
 				724DBF171CC14433008C2C50 /* NSString+Typeset.h in Headers */,
 				724DBF141CC14433008C2C50 /* Typeset.h in Headers */,
@@ -344,6 +351,7 @@
 				183D507D1B13F8110041B180 /* ViewController.m in Sources */,
 				7219A7571CACDAD000D53165 /* UIFont+Weight.m in Sources */,
 				7219A7531CACD79F00D53165 /* README.md in Sources */,
+				729F1A611D44B9BF00111F98 /* UITextView+Typeset.m in Sources */,
 				183D50A41B13F8200041B180 /* TypesetKit.m in Sources */,
 				72B0B9711CC48770000E7EDA /* TypesetKit+Match.m in Sources */,
 				183D507A1B13F8110041B180 /* AppDelegate.m in Sources */,
