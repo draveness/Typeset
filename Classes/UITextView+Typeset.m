@@ -39,9 +39,53 @@
         }
     });
 
+}
+
+- (void)typeset_setText:(NSString *)text {
+    if (self.typesetBlock && text) {
+        self.attributedText = self.typesetBlock(text);
+    } else {
+        [self typeset_setText:text];
+    }
+}
+
+- (NSAttributedString *(^)(NSString *))typesetBlock {
+    return objc_getAssociatedObject(self, @selector(typesetBlock));
+}
+
+- (void)setTypesetBlock:(NSAttributedString *(^)(NSString *))typesetBlock {
+    if (self.text && typesetBlock) self.attributedText = typesetBlock(self.text);
+
+    // Call textViewDidChange: method when text changed
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textViewDidChange:)
+                                                 name:UITextViewTextDidChangeNotification
+                                               object:self];
+
+    objc_setAssociatedObject(self, @selector(typesetBlock), [typesetBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)textViewDidChange:(NSNotification *)notification {
+    UITextView *textView = notification.object;
+
+    if (textView.typesetBlock && textView.text) {
+        textView.attributedText = textView.typesetBlock(textView.text);
+    }
+}
+
+
+@end
+
+@interface UITextViewTypesetHelper : NSObject
+
+@end
+
+@implementation UITextViewTypesetHelper
+
++ (void)load {
     // Swizzle dealoc to remove observer when current object is deallocated.
     Class classToSwizzle = [UITextView class];
-//    NSString *className = NSStringFromClass(classToSwizzle);
+    //    NSString *className = NSStringFromClass(classToSwizzle);
     SEL deallocSelector = sel_registerName("dealloc");
 
     __block void (*originalDealloc)(__unsafe_unretained id, SEL) = NULL;
@@ -74,38 +118,6 @@
 
         // We need to store original implementation again, in case it just changed.
         originalDealloc = (void(*)(__unsafe_unretained id, SEL))method_setImplementation(deallocMethod, newDeallocIMP);
-    }
-}
-
-- (void)typeset_setText:(NSString *)text {
-    if (self.typesetBlock && text) {
-        self.attributedText = self.typesetBlock(text);
-    } else {
-        [self typeset_setText:text];
-    }
-}
-
-- (NSAttributedString *(^)(NSString *))typesetBlock {
-    return objc_getAssociatedObject(self, @selector(typesetBlock));
-}
-
-- (void)setTypesetBlock:(NSAttributedString *(^)(NSString *))typesetBlock {
-    if (self.text && typesetBlock) self.attributedText = typesetBlock(self.text);
-
-    // Call textViewDidChange: method when text changed
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textViewDidChange:)
-                                                 name:UITextViewTextDidChangeNotification
-                                               object:self];
-
-    objc_setAssociatedObject(self, @selector(typesetBlock), [typesetBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (void)textViewDidChange:(NSNotification *)notification {
-    UITextView *textView = notification.object;
-
-    if (textView.typesetBlock && textView.text) {
-        textView.attributedText = textView.typesetBlock(textView.text);
     }
 }
 

@@ -17,6 +17,7 @@
 
 #import "UILabel+Typeset.h"
 #import "UITextField+Typeset.h"
+#import "UITextView+Typeset.h"
 
 #define TSBlock(block) ^(NSString *s) { return s.typeset.block.string; }
 
