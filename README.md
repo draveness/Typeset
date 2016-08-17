@@ -51,7 +51,13 @@ Typeset makes it easy to create `NSAttributedString`
     // If you type in this text field, it will color all the `1` in text field to red
     textField.typesetBlock = TSBlock(match(@"1").red);
 	```
-	
+
++ Construct complicated `NSMutableAttributedString`
+
+    ```objectivec
+    TSAttributedString(@"Hello".red, @" ", @"World".blue);
+    ```
+
 + Match part of string
 	+ Typeset providing a series of method to match part of your string, you can use these method to select part of your string, and add attribute to it.
 
