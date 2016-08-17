@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define Typeset($string) ( $string ? $string.typeset : @"".typeset )
+
 #define TypesetBlock(...) TypesetKit *(^)(__VA_ARGS__)
 
 #define TypesetUIntegerBlock TypesetBlock(NSUInteger)

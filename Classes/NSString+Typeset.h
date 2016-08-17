@@ -10,8 +10,6 @@
 
 @class TypesetKit;
 
-#define Typeset($string) ( $string ? $string.typeset : @"".typeset )
-
 @interface NSString (Typeset)
 
 - (TypesetKit *)typeset;
