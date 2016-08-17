@@ -210,13 +210,16 @@
         NSAssert([string isKindOfClass:[NSString class]] ||
                  [string isKindOfClass:[NSAttributedString class]] ||
                  [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
-        NSMutableAttributedString *mas = [self.string mutableCopy];
-        NSAttributedString *attributedString = string;
-        if ([attributedString isKindOfClass:[NSString class]]) {
-            attributedString = [[NSAttributedString alloc] initWithString:(NSString *)attributedString];
+
+        NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] init];
+        if ([string isKindOfClass:[NSString class]]) {
+            mas = [[NSMutableAttributedString alloc] initWithString:string];
+        } else if ([string isKindOfClass:[NSAttributedString class]]) {
+            mas = [[NSMutableAttributedString alloc] initWithAttributedString:string];
+        } else {
+            mas = (NSMutableAttributedString *)string;
         }
-        [mas appendAttributedString:attributedString];
-        self.string = mas;
+         [self.string appendAttributedString:mas];
         return self;
     };
 }

@@ -34,6 +34,8 @@
             mas = [[NSMutableAttributedString alloc] initWithString:string];
         } else if ([string isKindOfClass:[NSAttributedString class]]) {
             mas = [[NSMutableAttributedString alloc] initWithAttributedString:string];
+        } else {
+            mas = (NSMutableAttributedString *)string;
         }
         [self appendAttributedString:mas];
         return self;
