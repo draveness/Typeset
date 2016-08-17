@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "metamacros.h"
 
 #define Typeset($string) ( $string ? $string.typeset : @"".typeset )
 
@@ -21,8 +22,10 @@
 #define TypesetColorBlock TypesetBlock(UIColor *)
 #define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
 #define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
-#define TSString($a, ...) 
 
+#define TSAttributedString(...) _TSAttributedString(metamacro_argcount(__VA_ARGS__), __VA_ARGS__)
+
+NSMutableAttributedString *_TSAttributedString(int size, ...);
 
 @interface TypesetKit : NSObject
 

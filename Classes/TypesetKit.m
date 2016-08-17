@@ -27,6 +27,17 @@
 
 @implementation TypesetKit
 
+NSMutableAttributedString *_TSAttributedString(int size, ...) {
+    va_list vl;
+    va_start(vl, size);
+    NSMutableAttributedString *result = [[NSMutableAttributedString alloc] init];
+    for (NSUInteger i = 0; i < size; i++) {
+        id string = va_arg(vl, id);
+        NSMutableAttributedString *mas = [TypesetKit convertToMutableAttributedString:string];
+        [result appendAttributedString:mas];
+    }
+    return result;
+}
 
 - (void)setString:(NSMutableAttributedString *)string {
     _string = string;
@@ -207,19 +218,9 @@
     return ^(id string) {
         if (!string) return self;
 
-        NSAssert([string isKindOfClass:[NSString class]] ||
-                 [string isKindOfClass:[NSAttributedString class]] ||
-                 [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
+        NSMutableAttributedString *mas = [TypesetKit convertToMutableAttributedString:string];
 
-        NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] init];
-        if ([string isKindOfClass:[NSString class]]) {
-            mas = [[NSMutableAttributedString alloc] initWithString:string];
-        } else if ([string isKindOfClass:[NSAttributedString class]]) {
-            mas = [[NSMutableAttributedString alloc] initWithAttributedString:string];
-        } else {
-            mas = (NSMutableAttributedString *)string;
-        }
-         [self.string appendAttributedString:mas];
+        [self.string appendAttributedString:mas];
         return self;
     };
 }
@@ -401,6 +402,21 @@
         _paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     }
     return _paragraphStyle;
+}
+
++ (NSMutableAttributedString *)convertToMutableAttributedString:(id)string {
+    NSAssert([string isKindOfClass:[NSString class]] ||
+             [string isKindOfClass:[NSAttributedString class]] ||
+             [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
+    NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] init];
+    if ([string isKindOfClass:[NSString class]]) {
+        mas = [[NSMutableAttributedString alloc] initWithString:string];
+    } else if ([string isKindOfClass:[NSAttributedString class]]) {
+        mas = [[NSMutableAttributedString alloc] initWithAttributedString:string];
+    } else {
+        mas = (NSMutableAttributedString *)string;
+    }
+    return mas;
 }
 
 @end
