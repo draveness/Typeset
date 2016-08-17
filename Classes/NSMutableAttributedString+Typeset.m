@@ -24,6 +24,7 @@
 
 - (NSMutableAttributedString *(^)(id))append {
     return ^(id string) {
+        if (!string) return self;
         NSAssert([string isKindOfClass:[NSString class]] ||
                  [string isKindOfClass:[NSAttributedString class]] ||
                  [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
