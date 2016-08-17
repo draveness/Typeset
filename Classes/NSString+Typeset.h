@@ -10,7 +10,7 @@
 
 @class TypesetKit;
 
-#define Typeset(__X__) (__X__?__X__.typeset:@"".typeset)
+#define Typeset($string) ( $string ? $string.typeset : @"".typeset )
 
 @interface NSString (Typeset)
 
