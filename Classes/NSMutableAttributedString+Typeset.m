@@ -24,6 +24,10 @@
 
 - (NSMutableAttributedString *(^)(id))append {
     return ^(id string) {
+        NSAssert([string isKindOfClass:[NSString class]] ||
+                 [string isKindOfClass:[NSAttributedString class]] ||
+                 [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
+
         NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] init];
         if ([string isKindOfClass:[NSString class]]) {
             mas = [[NSMutableAttributedString alloc] initWithString:string];

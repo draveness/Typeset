@@ -203,10 +203,17 @@
     };
 }
 
-- (TypesetStringBlock)append {
-    return ^(NSString *string) {
+- (TypesetObjectBlock)append {
+    return ^(id string) {
+        NSAssert([string isKindOfClass:[NSString class]] ||
+                 [string isKindOfClass:[NSAttributedString class]] ||
+                 [string isKindOfClass:[NSMutableAttributedString class]], @"String passed into this method should be NSString，NSAttributedString or NSMutableAttributedString.");
         NSMutableAttributedString *mas = [self.string mutableCopy];
-        [mas appendAttributedString:[[NSAttributedString alloc] initWithString:string]];
+        NSAttributedString *attributedString = string;
+        if ([attributedString isKindOfClass:[NSString class]]) {
+            attributedString = [[NSAttributedString alloc] initWithString:(NSString *)attributedString];
+        }
+        [mas appendAttributedString:attributedString];
         self.string = mas;
         return self;
     };

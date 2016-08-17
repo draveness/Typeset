@@ -15,9 +15,11 @@
 #define TypesetCGFloatBlock TypesetBlock(CGFloat)
 #define TypesetRangeBlock TypesetBlock(NSRange)
 #define TypesetStringBlock TypesetBlock(NSString *)
+#define TypesetObjectBlock TypesetBlock(id)
 #define TypesetColorBlock TypesetBlock(UIColor *)
 #define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
 #define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
+#define TSString($a, ...) 
 
 
 @interface TypesetKit : NSObject
@@ -48,7 +50,7 @@
 
 - (TypesetStringBlock)link;
 
-- (TypesetStringBlock)append;
+- (TypesetObjectBlock)append;
 
 - (TypesetUIntegerBlock)ligature;
 
