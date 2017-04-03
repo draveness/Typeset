@@ -18,9 +18,7 @@ Typeset makes it easy to create `NSAttributedString`
 
 # Demo
 
-<p align="center">
 ![](./images/Typeset.gif)
-<p align="center">
 
 
 # Usage
