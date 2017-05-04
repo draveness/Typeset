@@ -91,6 +91,11 @@
     __block void (*originalDealloc)(__unsafe_unretained id, SEL) = NULL;
 
     id newDealloc = ^(__unsafe_unretained id objSelf) {
+        
+        if (![objSelf respondsToSelector:@selector(removeObserver:)]) {
+            return;
+        }
+        
         [objSelf removeObserver:self];
 
         if (originalDealloc == NULL) {
