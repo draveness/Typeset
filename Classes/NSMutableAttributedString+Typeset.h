@@ -16,6 +16,8 @@
 
 - (NSMutableAttributedString *(^)(id))append;
 
+- (NSMutableAttributedString *)bold;
+
 - (NSMutableAttributedString *(^)(UIColor *))color;
 - (NSMutableAttributedString *(^)(NSUInteger))hexColor;
 - (NSMutableAttributedString *(^)(NSUInteger))fontSize;

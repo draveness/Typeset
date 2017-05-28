@@ -14,6 +14,8 @@
 
 - (TypesetKit *)typeset;
 
+- (NSMutableAttributedString *)bold;
+
 - (NSMutableAttributedString *)black;
 - (NSMutableAttributedString *)darkGray;
 - (NSMutableAttributedString *)lightGray;
