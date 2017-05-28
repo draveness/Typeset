@@ -23,6 +23,10 @@
     return typeset;
 }
 
+- (NSMutableAttributedString *)bold {
+    return self.typeset.bold.string;
+}
+
 - (NSMutableAttributedString *)black {
     return self.typeset.black.string;
 }

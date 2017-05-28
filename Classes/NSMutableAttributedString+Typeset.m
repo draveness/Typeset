@@ -42,6 +42,10 @@
     };
 }
 
+- (NSMutableAttributedString *)bold {
+    return self.typeset.bold.string;
+}
+
 - (NSMutableAttributedString *(^)(UIColor *))color {
     return ^(UIColor *color) {
         return self.typeset.color(color).string;
