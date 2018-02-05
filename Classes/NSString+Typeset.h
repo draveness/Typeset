@@ -37,5 +37,6 @@
 - (NSMutableAttributedString *(^)(NSUInteger))fontSize;
 - (NSMutableAttributedString *(^)(NSString *))fontName;
 - (NSMutableAttributedString *(^)(NSString *, CGFloat))font;
+- (NSMutableAttributedString *(^)(UIFont *))exactFont;
 
 @end

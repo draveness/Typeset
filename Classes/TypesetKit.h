@@ -21,6 +21,7 @@
 #define TypesetObjectBlock TypesetBlock(id)
 #define TypesetColorBlock TypesetBlock(UIColor *)
 #define TypesetFontBlock TypesetBlock(NSString *, CGFloat)
+#define TypesetExactFontBlock TypesetBlock(UIFont *font)
 #define TypesetMatchBlock TypesetBlock(NSString *, NSStringCompareOptions)
 
 #define TSAttributedString(...) _TSAttributedString(metamacro_argcount(__VA_ARGS__), __VA_ARGS__)
@@ -37,6 +38,7 @@ NSMutableAttributedString *_TSAttributedString(int size, ...);
 - (TypesetStringBlock)fontName;
 - (TypesetCGFloatBlock)fontSize;
 - (TypesetFontBlock)font;
+- (TypesetExactFontBlock)exactFont;
 - (TypesetKit *)regular;
 - (TypesetKit *)light;
 - (TypesetKit *)bold;
