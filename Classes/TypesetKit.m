@@ -112,6 +112,16 @@ NSMutableAttributedString *_TSAttributedString(int size, ...) {
     };
 }
 
+- (TypesetExactFontBlock)exactFont {
+    return ^(UIFont *font) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:NSFontAttributeName value:font range:range];
+        }
+        return self;
+    };
+}
+
 - (TypesetStringBlock)fontName {
     return ^(NSString *fontName) {
         if (self.string.length) {

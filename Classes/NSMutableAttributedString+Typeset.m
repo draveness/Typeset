@@ -76,4 +76,10 @@
     };
 }
 
+- (NSMutableAttributedString *(^)(UIFont *))exactFont {
+    return ^(UIFont *font) {
+        return self.typeset.exactFont(font).string;
+    };
+}
+
 @end
