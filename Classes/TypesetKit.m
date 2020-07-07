@@ -419,4 +419,9 @@ NSMutableAttributedString *_TSAttributedString(int size, ...) {
     return mas;
 }
 
+- (void)restoreParagraphStyle {
+    
+    _paragraphStyle = nil;
+}
+
 @end

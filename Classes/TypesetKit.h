@@ -90,4 +90,6 @@ NSMutableAttributedString *_TSAttributedString(int size, ...);
 - (TypesetBlock(NSWritingDirection))baseWritingDirection;
 - (TypesetBlock(BOOL))allowsDefaultTighteningForTruncation;
 
+- (void)restoreParagraphStyle;
+
 @end
