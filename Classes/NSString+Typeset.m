@@ -18,6 +18,9 @@
     if (!typeset) {
         typeset = [[TypesetKit alloc] init];
         objc_setAssociatedObject(self, @selector(typeset), typeset, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }else {
+        [typeset restoreParagraphStyle];
+        typeset.string = nil;
     }
     typeset.string = [[NSMutableAttributedString alloc] initWithString:self];
     return typeset;
